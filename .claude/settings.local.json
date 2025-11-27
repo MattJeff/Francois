@@ -5,7 +5,12 @@
       "Bash(osascript:*)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nSite web François - IDE du Futur powered by Claude\n\n- 4 pages : Accueil, Autopilot, Fonctionnalités, Architecture\n- Design aux couleurs Claude (terre cuite/corail)\n- 12 screenshots de l''application\n- Responsive mobile/tablet/desktop\n- Animations et interactions JS\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nSite web François - IDE du Futur powered by Claude\n\n- 4 pages : Accueil, Autopilot, Fonctionnalités, Architecture\n- Design aux couleurs Claude (terre cuite/corail)\n- 12 screenshots de l''application\n- Responsive mobile/tablet/desktop\n- Animations et interactions JS\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nWaiting list + suppression infos sensibles\n\n- Remplacement boutons téléchargement par formulaire liste d''attente\n- Date de lancement: 1er Janvier 2026\n- Mise à jour navigation sur toutes les pages\n- Suppression section \"Organisation du Projet\" (info sensible)\n- Suppression section \"Commandes Tauri\" (info sensible)\n- Ajout CSS pour le formulaire waitlist avec animations\n- Ajout JavaScript pour gestion du formulaire\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAjout lien GitHub du logiciel\n\n- Lien vers https://github.com/MattJeff/FrancoisbuyClaude.git\n- Bouton \"Voir sur GitHub\" sur la page Architecture\n- Liens GitHub dans le footer de toutes les pages\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
