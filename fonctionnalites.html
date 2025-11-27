@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités - François | Toutes les Features</title>
+    <meta name="description" content="Découvrez toutes les fonctionnalités de François : visualisation thinking, contrôle vocal, multi-projets, MCP, sandboxing et plus encore.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">François</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="autopilot.html" class="nav-link">Autopilot</a></li>
+                <li><a href="fonctionnalites.html" class="nav-link active">Fonctionnalités</a></li>
+                <li><a href="architecture.html" class="nav-link">Architecture</a></li>
+            </ul>
+            <a href="index.html#download" class="nav-cta">Télécharger</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="page-hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">✨</span>
+                    Fonctionnalités
+                </div>
+                <h1>Tout ce qu'il vous faut <span class="gradient-text">pour créer</span></h1>
+                <p class="hero-description">
+                    François n'est pas juste un wrapper autour de Claude CLI. C'est une expérience complète de développement assisté par IA.
+                    <br><em>Alexandrie, Alexandra... tout est là !</em>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Thinking Visualization -->
+    <section class="section">
+        <div class="container">
+            <div class="feature-detail">
+                <div class="feature-detail-content">
+                    <div class="feature-badge">🧠 Visualisation</div>
+                    <h2>Voyez l'IA Réfléchir</h2>
+                    <p class="feature-intro">
+                        Le terminal cache tout. François montre tout. Chaque étape du raisonnement de Claude, en temps réel.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Thinking Tree</strong>
+                                <p>Vue arborescente hiérarchique du processus de réflexion</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Timeline temps réel</strong>
+                                <p>Chaque action horodatée : recherche, lecture, écriture, commandes</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>File Highlighting</strong>
+                                <p>🔵 Bleu = lectures, 🟠 Orange = modifications, 🟢 Vert = créations</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Métadonnées inline</strong>
+                                <p>Noms d'outils, chemins de fichiers, commandes exécutées</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-detail-visual">
+                    <div class="app-window">
+                        <div class="window-bar">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                        </div>
+                        <img src="image-8.png" alt="Thinking Process" class="app-screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice Control -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="feature-detail reverse">
+                <div class="feature-detail-content">
+                    <div class="feature-badge">🎤 Vocal</div>
+                    <h2>Parlez à Votre Code</h2>
+                    <p class="feature-intro">
+                        Le clavier devient optionnel. Dictez vos instructions, écoutez les réponses.
+                        <em>Comme chanter sous la douche, mais productif.</em>
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>4 langues supportées</strong>
+                                <p>Français, Anglais (US/UK), Espagnol, Allemand</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Transcription temps réel</strong>
+                                <p>Voyez ce que vous dites pendant que vous parlez</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Text-to-Speech</strong>
+                                <p>Réponses lues à voix haute (optionnel)</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Commandes naturelles</strong>
+                                <p>"Ajoute une validation email" — c'est fait.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="voice-examples">
+                        <h4>Exemples de commandes vocales :</h4>
+                        <div class="voice-example">"Corrige le bug de la ligne 47"</div>
+                        <div class="voice-example">"Ajoute une validation email dans le formulaire"</div>
+                        <div class="voice-example">"Explique-moi cette fonction"</div>
+                        <div class="voice-example">"Lance les tests"</div>
+                    </div>
+                </div>
+                <div class="feature-detail-visual">
+                    <div class="voice-demo">
+                        <div class="voice-indicator">
+                            <div class="voice-wave"></div>
+                            <div class="voice-wave"></div>
+                            <div class="voice-wave"></div>
+                            <div class="voice-wave"></div>
+                            <div class="voice-wave"></div>
+                        </div>
+                        <div class="voice-text">
+                            <span class="voice-transcript">"Ajoute un bouton de connexion avec Google..."</span>
+                        </div>
+                        <div class="voice-status">
+                            <span class="status-dot recording"></span>
+                            Écoute en cours...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="section">
+        <div class="container">
+            <div class="feature-detail">
+                <div class="feature-detail-content">
+                    <div class="feature-badge">📁 Navigation</div>
+                    <h2>Suivez Claude en Temps Réel</h2>
+                    <p class="feature-intro">
+                        Voyez exactement où Claude navigue dans votre codebase. Chaque fichier visité, chaque recherche effectuée.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Arborescence interactive</strong>
+                                <p>Expand/collapse, navigation rapide</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Visited Paths</strong>
+                                <p>Historique des chemins explorés par Claude</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Recent Activity</strong>
+                                <p>Timeline des dernières actions avec timestamps</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Preview intégré</strong>
+                                <p>Aperçu du contenu sans quitter la vue</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-detail-visual">
+                    <div class="app-window">
+                        <div class="window-bar">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                        </div>
+                        <img src="image-9.png" alt="Navigation View" class="app-screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Interface -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="feature-detail reverse">
+                <div class="feature-detail-content">
+                    <div class="feature-badge">💬 Chat</div>
+                    <h2>Interface Chat Riche</h2>
+                    <p class="feature-intro">
+                        Pas juste du texte. Des previews, du markdown, des pièces jointes. Une vraie conversation avec votre code.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Rendu Markdown complet</strong>
+                                <p>Code syntax highlighting, tables, listes...</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Pièces jointes</strong>
+                                <p>Drag-and-drop d'images, PDFs, fichiers code</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Preview multi-format</strong>
+                                <p>Images inline, PDFs, vidéos, archives</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Export historique</strong>
+                                <p>JSON, Markdown, HTML — gardez une trace</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-detail-visual">
+                    <div class="app-window">
+                        <div class="window-bar">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                        </div>
+                        <img src="image-1.png" alt="Chat Interface" class="app-screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Projects -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📂 Multi-Projets</span>
+                <h2 class="section-title">Jongler entre projets <span class="highlight">sans friction</span></h2>
+            </div>
+            <div class="multi-project-features">
+                <div class="mp-feature">
+                    <div class="mp-icon">🔄</div>
+                    <h3>Switch Instantané</h3>
+                    <p>Un clic pour changer de projet. Le contexte est préservé.</p>
+                </div>
+                <div class="mp-feature">
+                    <div class="mp-icon">💾</div>
+                    <h3>Sessions Persistantes</h3>
+                    <p>Reprenez exactement où vous étiez. L'historique reste.</p>
+                </div>
+                <div class="mp-feature">
+                    <div class="mp-icon">⭐</div>
+                    <h3>Favoris</h3>
+                    <p>Accès rapide à vos projets principaux.</p>
+                </div>
+                <div class="mp-feature">
+                    <div class="mp-icon">📊</div>
+                    <h3>Tracking</h3>
+                    <p>Tokens utilisés, coûts estimés, temps passé par projet.</p>
+                </div>
+            </div>
+            <div class="project-explorer-visual">
+                <div class="app-window">
+                    <div class="window-bar">
+                        <span class="window-dot red"></span>
+                        <span class="window-dot yellow"></span>
+                        <span class="window-dot green"></span>
+                    </div>
+                    <img src="image-10.png" alt="Project Explorer" class="app-screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MCP -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🔌 MCP</span>
+                <h2 class="section-title">Model Context Protocol Intégré</h2>
+                <p class="section-description">
+                    Connectez vos outils préférés. Bases de données, APIs, services cloud — tout devient accessible à Claude.
+                </p>
+            </div>
+            <div class="mcp-showcase">
+                <div class="mcp-visual">
+                    <div class="app-window">
+                        <div class="window-bar">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                        </div>
+                        <img src="image-11.png" alt="MCP Server Management" class="app-screenshot">
+                    </div>
+                </div>
+                <div class="mcp-info">
+                    <div class="mcp-card">
+                        <h3>Gestion des Serveurs</h3>
+                        <ul>
+                            <li>Import depuis la config Claude Desktop</li>
+                            <li>Ajout de serveurs personnalisés</li>
+                            <li>Variables d'environnement</li>
+                            <li>Auto-reconnexion en cas d'échec</li>
+                        </ul>
+                    </div>
+                    <div class="mcp-card">
+                        <h3>Intégrations Possibles</h3>
+                        <div class="mcp-integrations">
+                            <span class="integration-tag">PostgreSQL</span>
+                            <span class="integration-tag">MongoDB</span>
+                            <span class="integration-tag">Stripe</span>
+                            <span class="integration-tag">Slack</span>
+                            <span class="integration-tag">GitHub</span>
+                            <span class="integration-tag">AWS</span>
+                            <span class="integration-tag">+ Custom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🔒 Sécurité</span>
+                <h2 class="section-title">Votre code reste <span class="highlight">votre code</span></h2>
+                <p class="section-description">
+                    Sandboxing OS-level. Pas de compromis sur la sécurité.
+                    <em>On ne plaisante pas avec ça.</em>
+                </p>
+            </div>
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">🍎</div>
+                    <h3>macOS</h3>
+                    <p>Seatbelt sandbox natif avec profils dynamiques. Isolation complète par projet.</p>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">🐧</div>
+                    <h3>Linux</h3>
+                    <p>Filtres seccomp pour restriction des syscalls. Conteneurisation légère.</p>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">🔐</div>
+                    <h3>Permissions</h3>
+                    <p>Dialogues modaux pour chaque opération sensible. Vous gardez le contrôle.</p>
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">🗝️</div>
+                    <h3>Secrets</h3>
+                    <p>Chiffrement AES-GCM pour les données sensibles. Jamais en clair.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Agents -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🤖 Agents Custom</span>
+                <h2 class="section-title">Créez vos propres agents</h2>
+                <p class="section-description">
+                    Pas satisfait des agents par défaut ? Créez les vôtres avec des prompts système personnalisés.
+                </p>
+            </div>
+            <div class="custom-agents-showcase">
+                <div class="custom-agents-visual">
+                    <div class="app-window">
+                        <div class="window-bar">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                        </div>
+                        <img src="image-12.png" alt="Custom AI Agents" class="app-screenshot">
+                    </div>
+                </div>
+                <div class="custom-agents-info">
+                    <div class="custom-agent-card">
+                        <h3>Agents Prédéfinis</h3>
+                        <ul class="agent-list">
+                            <li><span class="agent-emoji">📝</span> Code Reviewer</li>
+                            <li><span class="agent-emoji">📚</span> Documentation Writer</li>
+                            <li><span class="agent-emoji">🔍</span> Security Analyst</li>
+                            <li><span class="agent-emoji">🔧</span> Refactoring Assistant</li>
+                        </ul>
+                    </div>
+                    <div class="custom-agent-card">
+                        <h3>Personnalisation</h3>
+                        <ul class="feature-list-simple">
+                            <li>Prompts système custom</li>
+                            <li>Choix du modèle (Opus, Sonnet, Haiku)</li>
+                            <li>Restrictions d'outils par agent</li>
+                            <li>Changement d'agent en session</li>
+                            <li>Import/Export de configurations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">⚡ Performance</span>
+                <h2 class="section-title">Tauri + Rust = <span class="highlight">Vitesse Native</span></h2>
+            </div>
+            <div class="perf-comparison-large">
+                <div class="perf-metric">
+                    <div class="metric-header">
+                        <span class="metric-label">RAM au repos</span>
+                    </div>
+                    <div class="metric-bars">
+                        <div class="metric-bar electron">
+                            <span class="bar-fill" style="width: 100%"></span>
+                            <span class="bar-label">Electron ~300 MB</span>
+                        </div>
+                        <div class="metric-bar francois">
+                            <span class="bar-fill" style="width: 17%"></span>
+                            <span class="bar-label">François ~50 MB</span>
+                        </div>
+                    </div>
+                    <div class="metric-result">6x moins de RAM</div>
+                </div>
+                <div class="perf-metric">
+                    <div class="metric-header">
+                        <span class="metric-label">Taille de l'application</span>
+                    </div>
+                    <div class="metric-bars">
+                        <div class="metric-bar electron">
+                            <span class="bar-fill" style="width: 100%"></span>
+                            <span class="bar-label">Electron ~150 MB</span>
+                        </div>
+                        <div class="metric-bar francois">
+                            <span class="bar-fill" style="width: 10%"></span>
+                            <span class="bar-label">François ~15 MB</span>
+                        </div>
+                    </div>
+                    <div class="metric-result">10x plus légère</div>
+                </div>
+                <div class="perf-metric">
+                    <div class="metric-header">
+                        <span class="metric-label">Temps de démarrage</span>
+                    </div>
+                    <div class="metric-bars">
+                        <div class="metric-bar electron">
+                            <span class="bar-fill" style="width: 100%"></span>
+                            <span class="bar-label">Electron 3-5s</span>
+                        </div>
+                        <div class="metric-bar francois">
+                            <span class="bar-fill" style="width: 20%"></span>
+                            <span class="bar-label">François &lt;1s</span>
+                        </div>
+                    </div>
+                    <div class="metric-result">Instantané</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Features Grid -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📋 Récap</span>
+                <h2 class="section-title">Toutes les fonctionnalités</h2>
+            </div>
+            <div class="all-features-grid">
+                <div class="all-feature">
+                    <span class="af-icon">🤖</span>
+                    <span class="af-name">Autopilot Multi-Agents</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">🧠</span>
+                    <span class="af-name">Visualisation Thinking</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">🎤</span>
+                    <span class="af-name">Contrôle Vocal</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">📁</span>
+                    <span class="af-name">Navigation Temps Réel</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">💬</span>
+                    <span class="af-name">Chat Rich Markdown</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">📂</span>
+                    <span class="af-name">Multi-Projets</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">🔌</span>
+                    <span class="af-name">Support MCP</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">🔒</span>
+                    <span class="af-name">Sandboxing OS</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">💾</span>
+                    <span class="af-name">Checkpoints & Rollback</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">📊</span>
+                    <span class="af-name">Scoring Confiance</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">🎨</span>
+                    <span class="af-name">Agents Personnalisés</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">📈</span>
+                    <span class="af-name">Analytics & Usage</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">🔔</span>
+                    <span class="af-name">Notifications Natives</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">⌨️</span>
+                    <span class="af-name">Raccourcis Clavier</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">🌙</span>
+                    <span class="af-name">Thèmes Clair/Sombre</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">🔍</span>
+                    <span class="af-name">Recherche Full-Text</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Convaincu ?</h2>
+                <p>
+                    Téléchargez François et découvrez toutes ces fonctionnalités par vous-même.
+                    <br><em>"Magnolias for ever" — mais en version développeur.</em>
+                </p>
+                <div class="cta-buttons">
+                    <a href="index.html#download" class="btn btn-primary btn-large">Télécharger François</a>
+                    <a href="architecture.html" class="btn btn-secondary btn-large">Voir l'architecture</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon">🚀</span>
+                        <span class="logo-text">François</span>
+                    </a>
+                    <p>L'IDE du futur, powered by Claude.<br><em>Arrêtez de coder. Commencez à créer.</em></p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produit</h4>
+                        <ul>
+                            <li><a href="autopilot.html">Autopilot</a></li>
+                            <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+                            <li><a href="architecture.html">Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Ressources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Changelog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:contact@francois.dev">contact@francois.dev</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 François. Tous droits réservés.</p>
+                <p class="footer-joke">Fait avec ❤️ et beaucoup de ☕ — <em>"Comme d'habitude"</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

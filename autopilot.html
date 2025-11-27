@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autopilot - François | Développement Autonome Multi-Agents</title>
+    <meta name="description" content="Découvrez le système Autopilot de François : 8 agents IA spécialisés qui codent, testent et déploient pour vous.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">François</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="autopilot.html" class="nav-link active">Autopilot</a></li>
+                <li><a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a></li>
+                <li><a href="architecture.html" class="nav-link">Architecture</a></li>
+            </ul>
+            <a href="index.html#download" class="nav-cta">Télécharger</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="page-hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🤖</span>
+                    Autopilot
+                </div>
+                <h1>Développement <span class="gradient-text">100% Autonome</span></h1>
+                <p class="hero-description">
+                    8 agents IA spécialisés qui travaillent ensemble pour transformer vos idées en code production-ready.
+                    <strong>Décrivez. Validez. Déployez.</strong>
+                    <br><em>C'est la fête au code !</em>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Comment ça marche</span>
+                <h2 class="section-title">Une mission, une équipe, un résultat</h2>
+            </div>
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Décrivez votre mission</h3>
+                        <p>En langage naturel, expliquez ce que vous voulez créer. Pas besoin de spécifications techniques.</p>
+                        <div class="step-example">
+                            <code>"Crée une API REST d'authentification avec JWT, tests et documentation"</code>
+                        </div>
+                    </div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>L'équipe se met au travail</h3>
+                        <p>Les agents analysent, planifient, codent, testent et documentent. Tout ça en parallèle.</p>
+                    </div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Vous reviewez et validez</h3>
+                        <p>Checkpoints automatiques, scoring de confiance, escalade intelligente. Vous gardez le contrôle.</p>
+                    </div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Déploiement automatique</h3>
+                        <p>Vercel, Netlify, Docker... Un clic et c'est en production.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- State Machine -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Machine à États</span>
+                <h2 class="section-title">Un workflow intelligent et adaptatif</h2>
+                <p class="section-description">
+                    L'Autopilot suit un workflow précis mais sait s'adapter. Si quelque chose cloche, il revient en arrière.
+                    <em>Comme un GPS qui recalcule l'itinéraire !</em>
+                </p>
+            </div>
+            <div class="state-machine">
+                <div class="state-diagram">
+                    <div class="state-row">
+                        <div class="state state-idle">
+                            <span class="state-icon">💤</span>
+                            <span class="state-name">IDLE</span>
+                        </div>
+                        <div class="state-arrow">↓</div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state state-analyzing">
+                            <span class="state-icon">🔍</span>
+                            <span class="state-name">ANALYZING</span>
+                        </div>
+                        <div class="state-branch">
+                            <span class="branch-condition">Questions ?</span>
+                            <div class="state state-clarifying">
+                                <span class="state-icon">❓</span>
+                                <span class="state-name">CLARIFYING</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state-arrow">↓</div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state state-planning">
+                            <span class="state-icon">📋</span>
+                            <span class="state-name">PLANNING</span>
+                        </div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state-arrow">↓</div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state state-executing">
+                            <span class="state-icon">⚡</span>
+                            <span class="state-name">EXECUTING</span>
+                        </div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state-arrow">↓</div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state state-testing">
+                            <span class="state-icon">🧪</span>
+                            <span class="state-name">TESTING</span>
+                        </div>
+                        <div class="state-branch">
+                            <span class="branch-condition">Bugs ?</span>
+                            <div class="state state-fixing">
+                                <span class="state-icon">🔧</span>
+                                <span class="state-name">FIXING</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state-arrow">↓</div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state state-reviewing">
+                            <span class="state-icon">👀</span>
+                            <span class="state-name">REVIEWING</span>
+                        </div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state-arrow">↓</div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state state-deploying">
+                            <span class="state-icon">🚀</span>
+                            <span class="state-name">DEPLOYING</span>
+                        </div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state-arrow">↓</div>
+                    </div>
+                    <div class="state-row">
+                        <div class="state state-completed">
+                            <span class="state-icon">✅</span>
+                            <span class="state-name">COMPLETED</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="state-safety">
+                    <div class="safety-card">
+                        <h4>🛡️ Sécurités intégrées</h4>
+                        <ul>
+                            <li><strong>Confiance &lt; 30%</strong> → Escalade vers humain</li>
+                            <li><strong>5+ erreurs</strong> → Arrêt automatique</li>
+                            <li><strong>Boucle détectée</strong> → Intervention requise</li>
+                            <li><strong>Timeout 30 min</strong> → Protection anti-blocage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 8 Agents -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">L'Équipe</span>
+                <h2 class="section-title">8 agents, 8 spécialités</h2>
+                <p class="section-description">
+                    Comme Claude François et ses Clodettes, chaque agent a son rôle précis.
+                    Ensemble, ils créent la magie.
+                </p>
+            </div>
+            <div class="agents-detailed">
+                <div class="agent-detailed-card">
+                    <div class="agent-header">
+                        <div class="agent-icon-large">🔍</div>
+                        <div class="agent-title">
+                            <h3>Analyst</h3>
+                            <span class="agent-role">Le Questionneur</span>
+                        </div>
+                    </div>
+                    <div class="agent-body">
+                        <p>Transforme vos demandes floues en spécifications précises. Pose les bonnes questions, identifie les risques, estime la complexité.</p>
+                        <div class="agent-tools">
+                            <span class="tool-tag">Read</span>
+                            <span class="tool-tag">Glob</span>
+                            <span class="tool-tag">Grep</span>
+                            <span class="tool-tag">WebSearch</span>
+                        </div>
+                        <div class="agent-output">
+                            <strong>Output :</strong> Spécifications, critères d'acceptation, score de complexité (1-10)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agent-detailed-card">
+                    <div class="agent-header">
+                        <div class="agent-icon-large">🏗️</div>
+                        <div class="agent-title">
+                            <h3>Architect</h3>
+                            <span class="agent-role">Le Planificateur</span>
+                        </div>
+                    </div>
+                    <div class="agent-body">
+                        <p>Conçoit l'architecture optimale, choisit les patterns, crée la liste de tâches. Pense structure avant code.</p>
+                        <div class="agent-tools">
+                            <span class="tool-tag">Read</span>
+                            <span class="tool-tag">Glob</span>
+                            <span class="tool-tag">WebSearch</span>
+                            <span class="tool-tag">Write</span>
+                        </div>
+                        <div class="agent-output">
+                            <strong>Output :</strong> Architecture, composants, data flow, liste de tâches
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agent-detailed-card">
+                    <div class="agent-header">
+                        <div class="agent-icon-large">💻</div>
+                        <div class="agent-title">
+                            <h3>Coder</h3>
+                            <span class="agent-role">Le Bâtisseur</span>
+                        </div>
+                    </div>
+                    <div class="agent-body">
+                        <p>Écrit du code production-ready. Respecte les conventions, documente, et n'oublie jamais les edge cases.</p>
+                        <div class="agent-tools">
+                            <span class="tool-tag">Read</span>
+                            <span class="tool-tag">Write</span>
+                            <span class="tool-tag">Edit</span>
+                            <span class="tool-tag">Bash</span>
+                        </div>
+                        <div class="agent-output">
+                            <strong>Output :</strong> Fichiers créés/modifiés, lignes changées, summary
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agent-detailed-card">
+                    <div class="agent-header">
+                        <div class="agent-icon-large">🧪</div>
+                        <div class="agent-title">
+                            <h3>Tester</h3>
+                            <span class="agent-role">Le Gardien</span>
+                        </div>
+                    </div>
+                    <div class="agent-body">
+                        <p>Écrit et exécute les tests. Mesure la couverture, identifie les bugs avant qu'ils n'arrivent en prod.</p>
+                        <div class="agent-tools">
+                            <span class="tool-tag">Read</span>
+                            <span class="tool-tag">Write</span>
+                            <span class="tool-tag">run_tests</span>
+                            <span class="tool-tag">coverage</span>
+                        </div>
+                        <div class="agent-output">
+                            <strong>Output :</strong> Tests passed/failed, coverage %, bugs détectés
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agent-detailed-card">
+                    <div class="agent-header">
+                        <div class="agent-icon-large">👀</div>
+                        <div class="agent-title">
+                            <h3>Reviewer</h3>
+                            <span class="agent-role">Le Critique</span>
+                        </div>
+                    </div>
+                    <div class="agent-body">
+                        <p>Analyse la qualité du code, détecte les code smells, vérifie la sécurité OWASP. Pas de compromis sur la qualité.</p>
+                        <div class="agent-tools">
+                            <span class="tool-tag">Read</span>
+                            <span class="tool-tag">Glob</span>
+                            <span class="tool-tag">analyze_code</span>
+                        </div>
+                        <div class="agent-output">
+                            <strong>Output :</strong> Score de qualité, issues, suggestions, approved/rejected
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agent-detailed-card">
+                    <div class="agent-header">
+                        <div class="agent-icon-large">🚀</div>
+                        <div class="agent-title">
+                            <h3>DevOps</h3>
+                            <span class="agent-role">Le Déployeur</span>
+                        </div>
+                    </div>
+                    <div class="agent-body">
+                        <p>Configure CI/CD, déploie sur Vercel/Netlify/Docker. Health checks, rollback automatique si nécessaire.</p>
+                        <div class="agent-tools">
+                            <span class="tool-tag">Bash</span>
+                            <span class="tool-tag">Git</span>
+                            <span class="tool-tag">deploy</span>
+                            <span class="tool-tag">health_check</span>
+                        </div>
+                        <div class="agent-output">
+                            <strong>Output :</strong> Status deployed/failed, URL, logs
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agent-detailed-card">
+                    <div class="agent-header">
+                        <div class="agent-icon-large">🧠</div>
+                        <div class="agent-title">
+                            <h3>Orchestrator</h3>
+                            <span class="agent-role">Le Chef d'Orchestre</span>
+                        </div>
+                    </div>
+                    <div class="agent-body">
+                        <p>Coordonne tous les agents, gère les transitions d'état, détecte les boucles infinies, escalade vers l'humain quand nécessaire.</p>
+                        <div class="agent-tools">
+                            <span class="tool-tag">FSM</span>
+                            <span class="tool-tag">Loop Detection</span>
+                            <span class="tool-tag">Confidence</span>
+                        </div>
+                        <div class="agent-output">
+                            <strong>Output :</strong> Coordination, décisions, escalations
+                        </div>
+                    </div>
+                </div>
+
+                <div class="agent-detailed-card agent-fast-card">
+                    <div class="agent-header">
+                        <div class="agent-icon-large">⚡</div>
+                        <div class="agent-title">
+                            <h3>Fullstack</h3>
+                            <span class="agent-role">Le Speedrunner</span>
+                        </div>
+                    </div>
+                    <div class="agent-body">
+                        <p>Mode FAST : un seul agent fait tout en un shot. Parfait pour les tâches simples. Style Lovable/Bolt.</p>
+                        <div class="agent-tools">
+                            <span class="tool-tag">Tous les outils</span>
+                        </div>
+                        <div class="agent-output">
+                            <strong>Output :</strong> Projet complet, rapide, efficace
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuration -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Configuration</span>
+                <h2 class="section-title">Personnalisez votre équipe</h2>
+                <p class="section-description">
+                    Choisissez le modèle Claude pour chaque agent. Opus pour les tâches complexes, Sonnet pour l'équilibre, Haiku pour la vitesse.
+                </p>
+            </div>
+            <div class="config-showcase">
+                <div class="config-visual">
+                    <div class="app-window">
+                        <div class="window-bar">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                        </div>
+                        <img src="image-6.png" alt="Configuration des agents" class="app-screenshot">
+                    </div>
+                </div>
+                <div class="config-details">
+                    <h3>Configuration par agent</h3>
+                    <div class="config-options">
+                        <div class="config-option">
+                            <span class="option-label">Analyst</span>
+                            <div class="option-buttons">
+                                <span class="option-btn">haiku</span>
+                                <span class="option-btn active">sonnet</span>
+                                <span class="option-btn">opus</span>
+                            </div>
+                        </div>
+                        <div class="config-option">
+                            <span class="option-label">Architect</span>
+                            <div class="option-buttons">
+                                <span class="option-btn">haiku</span>
+                                <span class="option-btn">sonnet</span>
+                                <span class="option-btn active">opus</span>
+                            </div>
+                        </div>
+                        <div class="config-option">
+                            <span class="option-label">Coder</span>
+                            <div class="option-buttons">
+                                <span class="option-btn">haiku</span>
+                                <span class="option-btn active">sonnet</span>
+                                <span class="option-btn">opus</span>
+                            </div>
+                        </div>
+                        <div class="config-option">
+                            <span class="option-label">Reviewer</span>
+                            <div class="option-buttons">
+                                <span class="option-btn">haiku</span>
+                                <span class="option-btn">sonnet</span>
+                                <span class="option-btn active">opus</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="config-tip">
+                        💡 <strong>Astuce :</strong> Utilisez Opus pour l'Architect et le Reviewer (décisions critiques), Sonnet pour le Coder et le Tester (bon équilibre).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Sécurité</span>
+                <h2 class="section-title">Autonome, mais <span class="highlight">responsable</span></h2>
+                <p class="section-description">
+                    L'Autopilot sait quand il doute. Et quand il doute, il demande.
+                    <em>Comme disait Claude François : "Je suis pas miro !"</em>
+                </p>
+            </div>
+            <div class="safety-grid">
+                <div class="safety-feature">
+                    <div class="safety-icon">📊</div>
+                    <h3>Scoring de Confiance</h3>
+                    <p>Score temps réel de 0 à 100%. En dessous de 50%, confirmation requise. En dessous de 30%, arrêt obligatoire.</p>
+                    <div class="confidence-bar">
+                        <div class="confidence-zone green" style="width: 40%">
+                            <span>90-100%</span>
+                            <small>Auto</small>
+                        </div>
+                        <div class="confidence-zone yellow" style="width: 20%">
+                            <span>70-90%</span>
+                            <small>Warn</small>
+                        </div>
+                        <div class="confidence-zone orange" style="width: 20%">
+                            <span>50-70%</span>
+                            <small>Confirm</small>
+                        </div>
+                        <div class="confidence-zone red" style="width: 20%">
+                            <span>&lt;50%</span>
+                            <small>Block</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="safety-feature">
+                    <div class="safety-icon">🔄</div>
+                    <h3>Détection de Boucles</h3>
+                    <p>Si le même état se répète 5 fois en 60 secondes, l'Autopilot s'arrête et demande de l'aide. Pas de boucle infinie ici.</p>
+                </div>
+                <div class="safety-feature">
+                    <div class="safety-icon">⏱️</div>
+                    <h3>Timeout Global</h3>
+                    <p>Maximum 30 minutes par mission. Si ça prend plus longtemps, c'est qu'il y a un problème.</p>
+                </div>
+                <div class="safety-feature">
+                    <div class="safety-icon">💾</div>
+                    <h3>Checkpoints Automatiques</h3>
+                    <p>Sauvegarde à chaque étape importante. Rollback en un clic si quelque chose ne va pas.</p>
+                </div>
+                <div class="safety-feature">
+                    <div class="safety-icon">🚨</div>
+                    <h3>Escalade Intelligente</h3>
+                    <p>Questions critiques ? Opérations destructives ? L'Autopilot vous demande avant d'agir.</p>
+                </div>
+                <div class="safety-feature">
+                    <div class="safety-icon">🔒</div>
+                    <h3>Sandboxing OS</h3>
+                    <p>Seatbelt sur macOS, seccomp sur Linux. Votre code reste dans sa bulle de sécurité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à lancer votre première mission ?</h2>
+                <p>
+                    Téléchargez François et laissez l'Autopilot transformer vos idées en code.
+                    <br><em>"Comme d'habitude", mais en 10x plus rapide.</em>
+                </p>
+                <div class="cta-buttons">
+                    <a href="index.html#download" class="btn btn-primary btn-large">Télécharger François</a>
+                    <a href="fonctionnalites.html" class="btn btn-secondary btn-large">Voir les fonctionnalités</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon">🚀</span>
+                        <span class="logo-text">François</span>
+                    </a>
+                    <p>L'IDE du futur, powered by Claude.<br><em>Arrêtez de coder. Commencez à créer.</em></p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produit</h4>
+                        <ul>
+                            <li><a href="autopilot.html">Autopilot</a></li>
+                            <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+                            <li><a href="architecture.html">Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Ressources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Changelog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:contact@francois.dev">contact@francois.dev</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 François. Tous droits réservés.</p>
+                <p class="footer-joke">Fait avec ❤️ et beaucoup de ☕ — <em>"Comme d'habitude"</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

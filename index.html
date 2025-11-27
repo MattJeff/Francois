@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>François - L'IDE du Futur Powered by Claude</title>
+    <meta name="description" content="François transforme Claude Code en un véritable copilote de développement avec Autopilot multi-agents, contrôle vocal et visualisation du raisonnement.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">François</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Accueil</a></li>
+                <li><a href="autopilot.html" class="nav-link">Autopilot</a></li>
+                <li><a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a></li>
+                <li><a href="architecture.html" class="nav-link">Architecture</a></li>
+            </ul>
+            <a href="#download" class="nav-cta">Télécharger</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">✨</span>
+                    Powered by Claude
+                </div>
+                <h1 class="hero-title">
+                    Arrêtez de coder.<br>
+                    <span class="gradient-text">Commencez à créer.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    François transforme Claude Code en un véritable copilote de développement.
+                    Autonomie totale, visualisation temps réel, contrôle vocal —
+                    <strong>comme si Claude François revenait... mais en développeur !</strong>
+                </p>
+                <div class="hero-cta">
+                    <a href="#download" class="btn btn-primary">
+                        <span>Télécharger François</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7,10 12,15 17,10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                    </a>
+                    <a href="autopilot.html" class="btn btn-secondary">
+                        Découvrir l'Autopilot
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">57K+</span>
+                        <span class="stat-label">Lignes de code</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">8</span>
+                        <span class="stat-label">Agents IA</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Plateformes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="app-preview">
+                    <div class="app-window">
+                        <div class="window-bar">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                            <span class="window-title">François powered by Claude</span>
+                        </div>
+                        <img src="image-1.png" alt="François Desktop App - Interface Chat" class="app-screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Le Problème</span>
+                <h2 class="section-title">Les développeurs perdent <span class="highlight">60% de leur temps</span> sur des tâches répétitives</h2>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🔍</div>
+                    <h3>Naviguer dans le code</h3>
+                    <p>Des heures à chercher où se trouve cette fichue fonction...</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">🐛</div>
+                    <h3>Debugger des erreurs</h3>
+                    <p>Un point-virgule manquant ? 3 heures de debug plus tard...</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📝</div>
+                    <h3>Écrire du boilerplate</h3>
+                    <p>Copy-paste, adapter, recommencer. Encore et encore.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⚙️</div>
+                    <h3>Configurer des environnements</h3>
+                    <p>"Ça marche sur ma machine" - Le cri du développeur</p>
+                </div>
+            </div>
+            <div class="cli-problem">
+                <div class="cli-card">
+                    <h3>Claude Code CLI est puissant, mais...</h3>
+                    <ul class="cli-issues">
+                        <li><span class="issue-icon">❌</span> Interface terminal uniquement</li>
+                        <li><span class="issue-icon">❌</span> Pas de visualisation du raisonnement</li>
+                        <li><span class="issue-icon">❌</span> Gestion manuelle des sessions</li>
+                        <li><span class="issue-icon">❌</span> Aucune vue d'ensemble du projet</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">La Solution</span>
+                <h2 class="section-title">François : Votre équipe de développeurs IA</h2>
+                <p class="section-description">
+                    Comme Claude François avait son orchestre, vous avez maintenant votre équipe d'agents IA.
+                    <em>"Alexandrie, Alexandra... le code compile !"</em>
+                </p>
+            </div>
+            <div class="features-showcase">
+                <div class="feature-main">
+                    <div class="feature-content">
+                        <div class="feature-badge">🤖 Autopilot</div>
+                        <h3>Développement 100% Autonome</h3>
+                        <p>
+                            Décrivez votre mission en langage naturel. François analyse, planifie, code, teste et déploie.
+                            Vous reviewez et validez. <strong>C'est tout.</strong>
+                        </p>
+                        <div class="feature-example">
+                            <div class="example-prompt">
+                                <span class="prompt-label">Mission :</span>
+                                "Crée une API REST d'authentification avec JWT, tests unitaires et documentation Swagger"
+                            </div>
+                            <div class="example-result">
+                                <span class="result-icon">→</span>
+                                François analyse, planifie, code, teste, documente.<br>
+                                <strong>Vous reviewez et validez.</strong>
+                            </div>
+                        </div>
+                        <a href="autopilot.html" class="btn btn-outline">En savoir plus sur l'Autopilot</a>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="app-window">
+                            <div class="window-bar">
+                                <span class="window-dot red"></span>
+                                <span class="window-dot yellow"></span>
+                                <span class="window-dot green"></span>
+                            </div>
+                            <img src="image-7.png" alt="François Autopilot - Prêt pour le décollage" class="app-screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section class="section agents-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Les 8 Agents</span>
+                <h2 class="section-title">Une équipe complète à votre service</h2>
+                <p class="section-description">
+                    Chaque agent est spécialisé dans son domaine. Ensemble, ils forment l'équipe de développement parfaite.
+                </p>
+            </div>
+            <div class="agents-grid">
+                <div class="agent-card">
+                    <div class="agent-icon">🔍</div>
+                    <h3>Analyst</h3>
+                    <p>Comprend vos besoins et pose les bonnes questions</p>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-icon">🏗️</div>
+                    <h3>Architect</h3>
+                    <p>Conçoit l'architecture optimale</p>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-icon">💻</div>
+                    <h3>Coder</h3>
+                    <p>Écrit du code production-ready</p>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-icon">🧪</div>
+                    <h3>Tester</h3>
+                    <p>Crée et exécute les tests</p>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-icon">👀</div>
+                    <h3>Reviewer</h3>
+                    <p>Review et améliore la qualité</p>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-icon">🚀</div>
+                    <h3>DevOps</h3>
+                    <p>Configure CI/CD et déploiement</p>
+                </div>
+                <div class="agent-card">
+                    <div class="agent-icon">🧠</div>
+                    <h3>Orchestrator</h3>
+                    <p>Coordonne tous les agents</p>
+                </div>
+                <div class="agent-card agent-fast">
+                    <div class="agent-icon">⚡</div>
+                    <h3>Fullstack</h3>
+                    <p>Mode rapide : tout en un shot</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid Section -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Fonctionnalités</span>
+                <h2 class="section-title">Tout ce qu'il vous faut pour créer</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card large">
+                    <div class="feature-card-content">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Voyez l'IA Réfléchir</h3>
+                        <p>Visualisation temps réel du processus de réflexion. Chaque fichier lu, chaque commande, chaque décision — transparent comme de l'eau de roche.</p>
+                    </div>
+                    <div class="feature-card-visual">
+                        <img src="image-3.png" alt="Thinking Process Visualization" class="feature-img">
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Contrôle Vocal</h3>
+                    <p>Parlez à votre code ! 4 langues supportées, transcription temps réel. "Ajoute une validation email" — c'est fait.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📁</div>
+                    <h3>Navigation Intelligente</h3>
+                    <p>Voyez où Claude navigue en temps réel. Fichiers lus en bleu, modifiés en orange, créés en vert.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Checkpoints & Rollback</h3>
+                    <p>Sauvegarde automatique à chaque étape. Un problème ? Rollback en un clic. Comme un Ctrl+Z surpuissant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Scoring de Confiance</h3>
+                    <p>L'IA sait quand elle doute. Indicateur de confiance temps réel, escalade automatique vers vous quand c'est critique.</p>
+                </div>
+            </div>
+            <div class="features-cta">
+                <a href="fonctionnalites.html" class="btn btn-primary">Voir toutes les fonctionnalités</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Gallery -->
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Aperçu</span>
+                <h2 class="section-title">François en action</h2>
+            </div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="image-4.png" alt="Autopilot Logs" class="gallery-img">
+                    <div class="gallery-caption">Journal d'exécution en temps réel</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image-5.png" alt="Mission Configuration" class="gallery-img">
+                    <div class="gallery-caption">Configuration de mission avancée</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image-6.png" alt="Agents Configuration" class="gallery-img">
+                    <div class="gallery-caption">Choix des modèles par agent</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="image-2.png" alt="Navigation View" class="gallery-img">
+                    <div class="gallery-caption">Vue Navigation avec activité récente</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Comparatif</span>
+                <h2 class="section-title">François vs. La Concurrence</h2>
+                <p class="section-description">
+                    Spoiler : on gagne sur toute la ligne. <em>Magnolias for ever !</em>
+                </p>
+            </div>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Fonctionnalité</th>
+                            <th>Claude CLI</th>
+                            <th>Cursor</th>
+                            <th>Copilot</th>
+                            <th class="highlight-col">François</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Autopilot multi-agents</td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td class="highlight-col"><span class="yes">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>Visualisation thinking</td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td class="highlight-col"><span class="yes">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>Contrôle vocal</td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td class="highlight-col"><span class="yes">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>Checkpoints/Rollback</td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td class="highlight-col"><span class="yes">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>App native légère</td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="yes">✅</span></td>
+                            <td class="highlight-col"><span class="yes">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sandboxing OS</td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td class="highlight-col"><span class="yes">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>Support MCP</td>
+                            <td><span class="yes">✅</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td class="highlight-col"><span class="yes">✅</span></td>
+                        </tr>
+                        <tr>
+                            <td>Open Source</td>
+                            <td><span class="yes">✅</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td><span class="no">❌</span></td>
+                            <td class="highlight-col"><span class="yes">✅</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section class="section performance-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Performance</span>
+                <h2 class="section-title">Tauri + Rust = <span class="highlight">Vitesse Lumière</span></h2>
+                <p class="section-description">
+                    Pas un site web déguisé. Une vraie application native.
+                    <em>Cette année-là, les apps Electron pleuraient...</em>
+                </p>
+            </div>
+            <div class="performance-grid">
+                <div class="perf-card">
+                    <div class="perf-comparison">
+                        <div class="perf-bar electron">
+                            <span class="perf-label">Electron</span>
+                            <span class="perf-value">~300 MB</span>
+                        </div>
+                        <div class="perf-bar francois">
+                            <span class="perf-label">François</span>
+                            <span class="perf-value">~50 MB</span>
+                        </div>
+                    </div>
+                    <h3>RAM au repos</h3>
+                    <p>6x moins de mémoire utilisée</p>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-comparison">
+                        <div class="perf-bar electron">
+                            <span class="perf-label">Electron</span>
+                            <span class="perf-value">~150 MB</span>
+                        </div>
+                        <div class="perf-bar francois">
+                            <span class="perf-label">François</span>
+                            <span class="perf-value">~15 MB</span>
+                        </div>
+                    </div>
+                    <h3>Taille de l'app</h3>
+                    <p>10x plus légère</p>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-comparison">
+                        <div class="perf-bar electron">
+                            <span class="perf-label">Electron</span>
+                            <span class="perf-value">3-5s</span>
+                        </div>
+                        <div class="perf-bar francois">
+                            <span class="perf-label">François</span>
+                            <span class="perf-value">&lt;1s</span>
+                        </div>
+                    </div>
+                    <h3>Démarrage</h3>
+                    <p>Instantané</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Témoignages</span>
+                <h2 class="section-title">Ils ont adopté François</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"On a buildé notre MVP en 2 semaines au lieu de 2 mois. L'Autopilot a généré 80% du code backend pendant qu'on se concentrait sur le design."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🚀</div>
+                        <div class="author-info">
+                            <strong>Startup en Mode Turbo</strong>
+                            <span>Fondateur, SaaS B2B</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Je code en vocal pendant mes trajets. Le soir, je review ce que l'Autopilot a fait dans la journée. Ma productivité a triplé."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">💻</div>
+                        <div class="author-info">
+                            <strong>Développeur Solo</strong>
+                            <span>Freelance Full-Stack</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Le sandboxing nous permet d'utiliser l'IA sur du code propriétaire en toute confiance. Le tracking des coûts par projet facilite la facturation interne."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🏢</div>
+                        <div class="author-info">
+                            <strong>Équipe Enterprise</strong>
+                            <span>CTO, Scale-up Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section" id="download">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt pour le décollage ?</h2>
+                <p>
+                    Rejoignez les développeurs qui ont déjà adopté François.
+                    <br><em>Le code devient un détail. Votre vision devient le produit.</em>
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                        macOS
+                    </a>
+                    <a href="#" class="btn btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 12V6.75l6-1.32v6.48L3 12m6.25.13l8.25.01V5.62l-8.25 1.83v4.68M20.5 6v5.99l-2.75.01V7.5l2.75-1.5M3 13l6 .09v6.03l-6-1.29V13m6.25.13v5.87l8.25 1.87v-7.74l-8.25-.01M20.5 13v5.01l-2.75 1.5v-6.5l2.75-.01"/>
+                        </svg>
+                        Windows
+                    </a>
+                    <a href="#" class="btn btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.504 0c-.155 0-.311.002-.465.006-.763.016-1.509.086-2.247.204a10.538 10.538 0 0 0-2.083.566c-.596.232-1.168.54-1.706.896a9.72 9.72 0 0 0-1.477 1.167 9.556 9.556 0 0 0-1.167 1.477 9.72 9.72 0 0 0-.896 1.706 10.37 10.37 0 0 0-.566 2.083 12.27 12.27 0 0 0-.204 2.247C.002 10.689 0 10.845 0 11v2c0 .155.002.311.006.465.016.763.086 1.509.204 2.247.115.739.3 1.435.566 2.083.232.596.54 1.168.896 1.706.293.435.655.854 1.167 1.477.513.513.932.874 1.477 1.167.538.356 1.11.664 1.706.896.648.267 1.344.451 2.083.566.738.118 1.484.188 2.247.204.154.004.31.006.465.006h2c.155 0 .311-.002.465-.006.763-.016 1.509-.086 2.247-.204a10.538 10.538 0 0 0 2.083-.566c.596-.232 1.168-.54 1.706-.896a9.72 9.72 0 0 0 1.477-1.167 9.556 9.556 0 0 0 1.167-1.477c.356-.538.664-1.11.896-1.706.267-.648.451-1.344.566-2.083.118-.738.188-1.484.204-2.247.004-.154.006-.31.006-.465v-2c0-.155-.002-.311-.006-.465a12.27 12.27 0 0 0-.204-2.247 10.37 10.37 0 0 0-.566-2.083 9.72 9.72 0 0 0-.896-1.706 9.556 9.556 0 0 0-1.167-1.477 9.72 9.72 0 0 0-1.477-1.167 9.72 9.72 0 0 0-1.706-.896 10.538 10.538 0 0 0-2.083-.566 12.27 12.27 0 0 0-2.247-.204C12.815.002 12.659 0 12.504 0zm-.004 1.8c.136 0 .271.002.406.005.689.015 1.365.078 2.033.184.668.105 1.288.27 1.873.506.539.213 1.054.484 1.536.804.482.32.93.686 1.334 1.09.404.404.77.852 1.09 1.334.32.482.591.997.804 1.536.236.585.401 1.205.506 1.873.106.668.169 1.344.184 2.033.003.135.005.27.005.406v1.8c0 .136-.002.271-.005.406a10.52 10.52 0 0 1-.184 2.033c-.105.668-.27 1.288-.506 1.873a7.92 7.92 0 0 1-.804 1.536c-.32.482-.686.93-1.09 1.334-.404.404-.852.77-1.334 1.09-.482.32-.997.591-1.536.804-.585.236-1.205.401-1.873.506a10.52 10.52 0 0 1-2.033.184c-.135.003-.27.005-.406.005h-1.8c-.136 0-.271-.002-.406-.005a10.52 10.52 0 0 1-2.033-.184c-.668-.105-1.288-.27-1.873-.506a7.92 7.92 0 0 1-1.536-.804c-.482-.32-.93-.686-1.334-1.09-.404-.404-.77-.852-1.09-1.334a7.92 7.92 0 0 1-.804-1.536c-.236-.585-.401-1.205-.506-1.873a10.52 10.52 0 0 1-.184-2.033C1.802 12.271 1.8 12.136 1.8 12v-1.8c0-.136.002-.271.005-.406.015-.689.078-1.365.184-2.033.105-.668.27-1.288.506-1.873.213-.539.484-1.054.804-1.536.32-.482.686-.93 1.09-1.334.404-.404.852-.77 1.334-1.09.482-.32.997-.591 1.536-.804.585-.236 1.205-.401 1.873-.506A10.52 10.52 0 0 1 10.165 1.8c.135-.003.27-.005.406-.005h1.93zM12 5.9a6.1 6.1 0 1 0 0 12.2 6.1 6.1 0 0 0 0-12.2z"/>
+                        </svg>
+                        Linux
+                    </a>
+                </div>
+                <div class="cta-requirements">
+                    <p><strong>Prérequis :</strong> Claude Code CLI installé · Node.js 18+ · Rust 1.77+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon">🚀</span>
+                        <span class="logo-text">François</span>
+                    </a>
+                    <p>L'IDE du futur, powered by Claude.<br><em>Arrêtez de coder. Commencez à créer.</em></p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produit</h4>
+                        <ul>
+                            <li><a href="autopilot.html">Autopilot</a></li>
+                            <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+                            <li><a href="architecture.html">Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Ressources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Changelog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:contact@francois.dev">contact@francois.dev</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 François. Tous droits réservés.</p>
+                <p class="footer-joke">Fait avec ❤️ et beaucoup de ☕ — <em>"Comme d'habitude"</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture - François | Stack Technique</title>
+    <meta name="description" content="Découvrez l'architecture technique de François : Tauri, Rust, React, TypeScript et plus de 57 000 lignes de code.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">François</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="autopilot.html" class="nav-link">Autopilot</a></li>
+                <li><a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a></li>
+                <li><a href="architecture.html" class="nav-link active">Architecture</a></li>
+            </ul>
+            <a href="index.html#download" class="nav-cta">Télécharger</a>
+            <button class="nav-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="page-hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🏗️</span>
+                    Architecture
+                </div>
+                <h1>Sous le capot de <span class="gradient-text">François</span></h1>
+                <p class="hero-description">
+                    57 000+ lignes de code, une stack moderne, et une architecture pensée pour la performance et l'extensibilité.
+                    <br><em>C'est du solide, comme les paillettes de Claude François !</em>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">57K+</div>
+                    <div class="stat-label">Lignes de code</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">107</div>
+                    <div class="stat-label">Fichiers TypeScript</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">36</div>
+                    <div class="stat-label">Composants React</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">30+</div>
+                    <div class="stat-label">Services Autopilot</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Agents IA</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Plugins Tauri</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Stack Technique</span>
+                <h2 class="section-title">Les technologies derrière François</h2>
+            </div>
+            <div class="stack-grid">
+                <div class="stack-category">
+                    <h3>Frontend</h3>
+                    <div class="stack-items">
+                        <div class="stack-item">
+                            <div class="stack-icon">⚛️</div>
+                            <div class="stack-info">
+                                <strong>React 19.2</strong>
+                                <span>Framework UI</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">📘</div>
+                            <div class="stack-info">
+                                <strong>TypeScript 5.9</strong>
+                                <span>Typage statique</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">⚡</div>
+                            <div class="stack-info">
+                                <strong>Vite 7.2</strong>
+                                <span>Build tool & dev server</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">🎨</div>
+                            <div class="stack-info">
+                                <strong>Tailwind CSS 3.4</strong>
+                                <span>Styling utility-first</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">🐻</div>
+                            <div class="stack-info">
+                                <strong>Zustand 5.0</strong>
+                                <span>State management</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">🎬</div>
+                            <div class="stack-info">
+                                <strong>Framer Motion 11</strong>
+                                <span>Animations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-category">
+                    <h3>Backend / Desktop</h3>
+                    <div class="stack-items">
+                        <div class="stack-item">
+                            <div class="stack-icon">🦀</div>
+                            <div class="stack-info">
+                                <strong>Tauri 2.9</strong>
+                                <span>Framework desktop (Rust)</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">⚙️</div>
+                            <div class="stack-info">
+                                <strong>Rust 1.77</strong>
+                                <span>Logique backend</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">🔄</div>
+                            <div class="stack-info">
+                                <strong>Tokio</strong>
+                                <span>Runtime async</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">📦</div>
+                            <div class="stack-info">
+                                <strong>Serde</strong>
+                                <span>Sérialisation JSON</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-category">
+                    <h3>Plugins Tauri</h3>
+                    <div class="stack-items">
+                        <div class="stack-item">
+                            <div class="stack-icon">💻</div>
+                            <div class="stack-info">
+                                <strong>plugin-shell</strong>
+                                <span>Exécution de commandes</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">📁</div>
+                            <div class="stack-info">
+                                <strong>plugin-fs</strong>
+                                <span>Accès fichiers</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">📝</div>
+                            <div class="stack-info">
+                                <strong>plugin-log</strong>
+                                <span>Logging côté serveur</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">🔔</div>
+                            <div class="stack-info">
+                                <strong>plugin-notification</strong>
+                                <span>Notifications OS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Diagram -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Vue d'Ensemble</span>
+                <h2 class="section-title">Architecture Globale</h2>
+            </div>
+            <div class="architecture-diagram">
+                <div class="arch-layer user-layer">
+                    <div class="layer-label">Interface Utilisateur</div>
+                    <div class="layer-content">
+                        <div class="arch-box">Chat</div>
+                        <div class="arch-box">Thinking</div>
+                        <div class="arch-box">Navigation</div>
+                        <div class="arch-box">Autopilot</div>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer react-layer">
+                    <div class="layer-label">React + Zustand</div>
+                    <div class="layer-content">
+                        <div class="arch-box">36 Composants</div>
+                        <div class="arch-box">8 Hooks</div>
+                        <div class="arch-box">5 Stores</div>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer services-layer">
+                    <div class="layer-label">Services Autopilot</div>
+                    <div class="layer-content">
+                        <div class="arch-box">Orchestrator</div>
+                        <div class="arch-box">Agent Executor</div>
+                        <div class="arch-box">Claude Client</div>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer rust-layer">
+                    <div class="layer-label">Backend Rust (Tauri)</div>
+                    <div class="layer-content">
+                        <div class="arch-box">Process Manager</div>
+                        <div class="arch-box">File Ops</div>
+                        <div class="arch-box">Sandbox</div>
+                        <div class="arch-box">MCP</div>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer os-layer">
+                    <div class="layer-label">OS (macOS / Linux / Windows)</div>
+                    <div class="layer-content">
+                        <div class="arch-box">Claude CLI</div>
+                        <div class="arch-box">File System</div>
+                        <div class="arch-box">Shell</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Structure -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Structure</span>
+                <h2 class="section-title">Organisation du Projet</h2>
+            </div>
+            <div class="project-structure">
+                <pre class="code-block"><code>claude-code-desktop/
+├── src/                          <span class="comment"># Frontend React</span>
+│   ├── components/               <span class="comment"># 36 composants React</span>
+│   │   ├── autopilot/            <span class="comment"># Système autonome (8 composants)</span>
+│   │   ├── chat/                 <span class="comment"># Interface chat (7 composants)</span>
+│   │   ├── thinking/             <span class="comment"># Visualisation thinking</span>
+│   │   ├── voice/                <span class="comment"># Contrôle vocal</span>
+│   │   └── ...
+│   ├── hooks/                    <span class="comment"># 8 hooks personnalisés</span>
+│   │   ├── useClaude.ts          <span class="comment"># Gestion session Claude</span>
+│   │   ├── useAutopilot.ts       <span class="comment"># Orchestration autopilot</span>
+│   │   ├── useVoice.ts           <span class="comment"># Reconnaissance vocale</span>
+│   │   └── ...
+│   ├── stores/                   <span class="comment"># State Management Zustand</span>
+│   │   ├── app-store.ts          <span class="comment"># État principal</span>
+│   │   ├── autopilot-store.ts    <span class="comment"># État missions</span>
+│   │   └── ...
+│   ├── services/                 <span class="comment"># Logique métier</span>
+│   │   └── autopilot/            <span class="comment"># 30+ services autonomes</span>
+│   └── types/                    <span class="comment"># Définitions TypeScript</span>
+│
+├── src-tauri/                    <span class="comment"># Backend Rust</span>
+│   ├── src/
+│   │   ├── lib.rs                <span class="comment"># Gestion processus Claude</span>
+│   │   ├── autopilot.rs          <span class="comment"># Backend autopilot</span>
+│   │   ├── mcp.rs                <span class="comment"># Gestion serveurs MCP</span>
+│   │   └── sandbox.rs            <span class="comment"># Sandboxing OS</span>
+│   ├── Cargo.toml                <span class="comment"># Dépendances Rust</span>
+│   └── tauri.conf.json           <span class="comment"># Config Tauri</span>
+│
+├── Configuration
+│   ├── package.json              <span class="comment"># NPM</span>
+│   ├── vite.config.ts            <span class="comment"># Vite</span>
+│   ├── tsconfig.json             <span class="comment"># TypeScript</span>
+│   └── tailwind.config.js        <span class="comment"># Tailwind</span></code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Flow -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Flux de Données</span>
+                <h2 class="section-title">Comment les données circulent</h2>
+            </div>
+            <div class="data-flow">
+                <div class="flow-step">
+                    <div class="flow-icon">👤</div>
+                    <div class="flow-content">
+                        <h4>Input Utilisateur</h4>
+                        <p>Chat ou Voix</p>
+                    </div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">⚛️</div>
+                    <div class="flow-content">
+                        <h4>React Component</h4>
+                        <p>hook useClaude</p>
+                    </div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">🐻</div>
+                    <div class="flow-content">
+                        <h4>Zustand Store</h4>
+                        <p>Mise à jour état</p>
+                    </div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">📡</div>
+                    <div class="flow-content">
+                        <h4>Tauri Invoke</h4>
+                        <p>start_claude()</p>
+                    </div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">🦀</div>
+                    <div class="flow-content">
+                        <h4>Backend Rust</h4>
+                        <p>Spawn processus</p>
+                    </div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">🤖</div>
+                    <div class="flow-content">
+                        <h4>Claude CLI</h4>
+                        <p>Stream JSON</p>
+                    </div>
+                </div>
+                <div class="flow-arrow-return">↩</div>
+                <div class="flow-step">
+                    <div class="flow-icon">📺</div>
+                    <div class="flow-content">
+                        <h4>Re-render</h4>
+                        <p>Affichage réponse</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autopilot Services -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Services Autopilot</span>
+                <h2 class="section-title">30+ services spécialisés</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-category">
+                    <h3>Core</h3>
+                    <ul class="service-list">
+                        <li><code>orchestrator.ts</code> — Cerveau central, FSM</li>
+                        <li><code>agent-executor.ts</code> — Exécution agents + tools</li>
+                        <li><code>claude-client.ts</code> — Interface API/CLI</li>
+                        <li><code>agents.ts</code> — Définitions des 7 agents</li>
+                        <li><code>session-manager.ts</code> — Gestion sessions</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Fonctionnel</h3>
+                    <ul class="service-list">
+                        <li><code>file-operations.ts</code> — CRUD fichiers sécurisé</li>
+                        <li><code>git-operations.ts</code> — Commit, push, branch</li>
+                        <li><code>test-runner.ts</code> — Exécution tests</li>
+                        <li><code>code-analyzer.ts</code> — Analyse statique</li>
+                        <li><code>deployment.ts</code> — Vercel/Netlify/Docker</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Support</h3>
+                    <ul class="service-list">
+                        <li><code>confidence.ts</code> — Score de confiance</li>
+                        <li><code>learning.ts</code> — Apprentissage patterns</li>
+                        <li><code>checkpoints.ts</code> — Sauvegarde/restauration</li>
+                        <li><code>secrets-manager.ts</code> — Chiffrement AES-GCM</li>
+                        <li><code>resilience.ts</code> — Circuit breakers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patterns -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Patterns</span>
+                <h2 class="section-title">Patterns Architecturaux</h2>
+            </div>
+            <div class="patterns-grid">
+                <div class="pattern-card">
+                    <div class="pattern-icon">🐻</div>
+                    <h3>State Management</h3>
+                    <p>Zustand avec middleware de persistance localStorage. Simple, performant, sans boilerplate.</p>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-icon">🎁</div>
+                    <h3>Provider Pattern</h3>
+                    <p>ClaudeProvider pour l'écoute d'événements Tauri. Injection de contexte propre.</p>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-icon">📦</div>
+                    <h3>Service Layer</h3>
+                    <p>Séparation stricte logique métier / UI. Les composants restent légers.</p>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-icon">📡</div>
+                    <h3>Event-Driven</h3>
+                    <p>Communication backend-frontend via événements Tauri. Découplage total.</p>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-icon">🎭</div>
+                    <h3>Multi-Agent Orchestrator</h3>
+                    <p>Pattern orchestrateur pour coordination des agents. FSM pour les transitions.</p>
+                </div>
+                <div class="pattern-card">
+                    <div class="pattern-icon">🔄</div>
+                    <h3>Circuit Breaker</h3>
+                    <p>Protection contre les défaillances en cascade. Retry avec backoff exponentiel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Bus -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Event Bus</span>
+                <h2 class="section-title">Communication par Événements</h2>
+            </div>
+            <div class="events-showcase">
+                <div class="events-category">
+                    <h4>Mission</h4>
+                    <div class="event-tags">
+                        <span class="event-tag">MISSION_STARTED</span>
+                        <span class="event-tag">MISSION_COMPLETED</span>
+                        <span class="event-tag">MISSION_TIMEOUT</span>
+                    </div>
+                </div>
+                <div class="events-category">
+                    <h4>État</h4>
+                    <div class="event-tags">
+                        <span class="event-tag">STATE_CHANGED</span>
+                        <span class="event-tag">TASK_STARTED</span>
+                        <span class="event-tag">TASK_COMPLETED</span>
+                    </div>
+                </div>
+                <div class="events-category">
+                    <h4>Agents</h4>
+                    <div class="event-tags">
+                        <span class="event-tag">AGENT_STARTED</span>
+                        <span class="event-tag">AGENT_COMPLETED</span>
+                        <span class="event-tag">AGENT_ERROR</span>
+                    </div>
+                </div>
+                <div class="events-category">
+                    <h4>Fichiers & Git</h4>
+                    <div class="event-tags">
+                        <span class="event-tag">FILE_CHANGED</span>
+                        <span class="event-tag">GIT_COMMIT</span>
+                        <span class="event-tag">GIT_PUSHED</span>
+                    </div>
+                </div>
+                <div class="events-category">
+                    <h4>Tests & Review</h4>
+                    <div class="event-tags">
+                        <span class="event-tag">TESTS_PASSED</span>
+                        <span class="event-tag">TESTS_FAILED</span>
+                        <span class="event-tag">REVIEW_COMPLETED</span>
+                    </div>
+                </div>
+                <div class="events-category">
+                    <h4>Humain</h4>
+                    <div class="event-tags">
+                        <span class="event-tag">CONFIDENCE_WARNING</span>
+                        <span class="event-tag">HUMAN_QUESTION</span>
+                        <span class="event-tag">HUMAN_ANSWER</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rust Backend -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Backend Rust</span>
+                <h2 class="section-title">Les commandes Tauri</h2>
+            </div>
+            <div class="rust-commands">
+                <div class="command-card">
+                    <code>start_claude_agent()</code>
+                    <p>Démarre une session Claude CLI</p>
+                </div>
+                <div class="command-card">
+                    <code>stop_claude_agent()</code>
+                    <p>Arrête la session en cours</p>
+                </div>
+                <div class="command-card">
+                    <code>send_tool_result()</code>
+                    <p>Envoie le résultat d'un outil</p>
+                </div>
+                <div class="command-card">
+                    <code>get_agent_status()</code>
+                    <p>Récupère l'état de l'agent</p>
+                </div>
+                <div class="command-card">
+                    <code>execute_command()</code>
+                    <p>Exécute des commandes shell</p>
+                </div>
+                <div class="command-card">
+                    <code>read_file() / write_file()</code>
+                    <p>Opérations fichiers sécurisées</p>
+                </div>
+                <div class="command-card">
+                    <code>get_directory_tree()</code>
+                    <p>Arborescence du projet</p>
+                </div>
+                <div class="command-card">
+                    <code>path_exists()</code>
+                    <p>Vérifie l'existence d'un chemin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Architecture -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pourquoi ?</span>
+                <h2 class="section-title">Les choix architecturaux</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Pourquoi Tauri plutôt qu'Electron ?</h3>
+                    <p>6x moins de RAM, 10x plus léger, démarrage instantané. Rust pour la sécurité et la performance. Pas de compromis.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Pourquoi Zustand plutôt que Redux ?</h3>
+                    <p>Zéro boilerplate, API simple, performances natives. Parfait pour une app de cette taille.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Pourquoi une FSM pour l'Autopilot ?</h3>
+                    <p>Prévisibilité, debugging facile, recovery automatique. Chaque état a des transitions définies.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Pourquoi des agents spécialisés ?</h3>
+                    <p>Meilleure qualité : chaque agent est expert dans son domaine. Parallélisation possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Envie de contribuer ?</h2>
+                <p>
+                    François est open source. Venez construire l'IDE du futur avec nous.
+                    <br><em>"Cette année-là, le code était beautiful..."</em>
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        Voir sur GitHub
+                    </a>
+                    <a href="index.html#download" class="btn btn-secondary btn-large">Télécharger François</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span class="logo-icon">🚀</span>
+                        <span class="logo-text">François</span>
+                    </a>
+                    <p>L'IDE du futur, powered by Claude.<br><em>Arrêtez de coder. Commencez à créer.</em></p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produit</h4>
+                        <ul>
+                            <li><a href="autopilot.html">Autopilot</a></li>
+                            <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+                            <li><a href="architecture.html">Architecture</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Ressources</h4>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Changelog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:contact@francois.dev">contact@francois.dev</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Discord</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 François. Tous droits réservés.</p>
+                <p class="footer-joke">Fait avec ❤️ et beaucoup de ☕ — <em>"Comme d'habitude"</em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

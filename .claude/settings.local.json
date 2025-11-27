@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open:*)",
+      "Bash(osascript:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nSite web François - IDE du Futur powered by Claude\n\n- 4 pages : Accueil, Autopilot, Fonctionnalités, Architecture\n- Design aux couleurs Claude (terre cuite/corail)\n- 12 screenshots de l''application\n- Responsive mobile/tablet/desktop\n- Animations et interactions JS\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
