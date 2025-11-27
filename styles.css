@@ -934,6 +934,168 @@ h4 { font-size: 1.125rem; }
     opacity: 0.8;
 }
 
+/* -------------------- Waiting List Form -------------------- */
+.launch-date-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgba(255,255,255,0.2);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 50px;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255,255,255,0.4);
+    }
+}
+
+.launch-date-badge .rocket-icon {
+    font-size: 1.25rem;
+}
+
+.waitlist-form {
+    max-width: 500px;
+    margin: 0 auto var(--space-xl);
+}
+
+.waitlist-form .form-group {
+    display: flex;
+    gap: var(--space-sm);
+    background: rgba(255,255,255,0.15);
+    padding: 6px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.waitlist-form input[type="email"] {
+    flex: 1;
+    padding: var(--space-md) var(--space-lg);
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+.waitlist-form input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.waitlist-form .btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    white-space: nowrap;
+}
+
+.waitlist-form .btn svg {
+    transition: transform 0.3s ease;
+}
+
+.waitlist-form .btn:hover svg {
+    transform: translateX(4px);
+}
+
+.form-success {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    color: white;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-success.show {
+    display: flex;
+}
+
+.form-success svg {
+    color: #4ade80;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.waitlist-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.waitlist-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.waitlist-stats .stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.waitlist-stats .stat-label {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+.waitlist-stats .stat-separator {
+    opacity: 0.5;
+    font-size: 1.5rem;
+}
+
+.waitlist-stats .stat-platforms {
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments for waitlist form */
+@media (max-width: 480px) {
+    .waitlist-form .form-group {
+        flex-direction: column;
+    }
+
+    .waitlist-form input[type="email"] {
+        text-align: center;
+    }
+
+    .waitlist-form .btn {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .waitlist-stats {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .waitlist-stats .stat-separator {
+        display: none;
+    }
+}
+
 /* -------------------- Footer -------------------- */
 .footer {
     background: var(--bg-darker);

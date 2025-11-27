@@ -150,6 +150,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // -------------------- Waitlist Form --------------------
+    const waitlistForm = document.getElementById('waitlistForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const waitlistCount = document.getElementById('waitlistCount');
+
+    if (waitlistForm) {
+        waitlistForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('waitlistEmail').value;
+
+            // Simulate form submission
+            const formGroup = waitlistForm.querySelector('.form-group');
+            formGroup.style.display = 'none';
+            formSuccess.classList.add('show');
+
+            // Update counter with animation
+            if (waitlistCount) {
+                const currentCount = parseInt(waitlistCount.textContent.replace(/,/g, ''));
+                const newCount = currentCount + 1;
+                waitlistCount.textContent = newCount.toLocaleString();
+            }
+
+            // Store in localStorage (for demo purposes)
+            const emails = JSON.parse(localStorage.getItem('francois_waitlist') || '[]');
+            emails.push({ email, date: new Date().toISOString() });
+            localStorage.setItem('francois_waitlist', JSON.stringify(emails));
+        });
+    }
+
     // -------------------- Console Easter Egg --------------------
     console.log('%c🚀 François - L\'IDE du Futur', 'font-size: 24px; font-weight: bold; color: #D97757;');
     console.log('%cPowered by Claude', 'font-size: 14px; color: #888;');

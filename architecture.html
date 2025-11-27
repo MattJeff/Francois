@@ -24,7 +24,7 @@
                 <li><a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a></li>
                 <li><a href="architecture.html" class="nav-link active">Architecture</a></li>
             </ul>
-            <a href="index.html#download" class="nav-cta">Télécharger</a>
+            <a href="index.html#waiting-list" class="nav-cta">Liste d'attente</a>
             <button class="nav-toggle" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -266,53 +266,6 @@
         </div>
     </section>
 
-    <!-- Project Structure -->
-    <section class="section section-dark">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Structure</span>
-                <h2 class="section-title">Organisation du Projet</h2>
-            </div>
-            <div class="project-structure">
-                <pre class="code-block"><code>claude-code-desktop/
-├── src/                          <span class="comment"># Frontend React</span>
-│   ├── components/               <span class="comment"># 36 composants React</span>
-│   │   ├── autopilot/            <span class="comment"># Système autonome (8 composants)</span>
-│   │   ├── chat/                 <span class="comment"># Interface chat (7 composants)</span>
-│   │   ├── thinking/             <span class="comment"># Visualisation thinking</span>
-│   │   ├── voice/                <span class="comment"># Contrôle vocal</span>
-│   │   └── ...
-│   ├── hooks/                    <span class="comment"># 8 hooks personnalisés</span>
-│   │   ├── useClaude.ts          <span class="comment"># Gestion session Claude</span>
-│   │   ├── useAutopilot.ts       <span class="comment"># Orchestration autopilot</span>
-│   │   ├── useVoice.ts           <span class="comment"># Reconnaissance vocale</span>
-│   │   └── ...
-│   ├── stores/                   <span class="comment"># State Management Zustand</span>
-│   │   ├── app-store.ts          <span class="comment"># État principal</span>
-│   │   ├── autopilot-store.ts    <span class="comment"># État missions</span>
-│   │   └── ...
-│   ├── services/                 <span class="comment"># Logique métier</span>
-│   │   └── autopilot/            <span class="comment"># 30+ services autonomes</span>
-│   └── types/                    <span class="comment"># Définitions TypeScript</span>
-│
-├── src-tauri/                    <span class="comment"># Backend Rust</span>
-│   ├── src/
-│   │   ├── lib.rs                <span class="comment"># Gestion processus Claude</span>
-│   │   ├── autopilot.rs          <span class="comment"># Backend autopilot</span>
-│   │   ├── mcp.rs                <span class="comment"># Gestion serveurs MCP</span>
-│   │   └── sandbox.rs            <span class="comment"># Sandboxing OS</span>
-│   ├── Cargo.toml                <span class="comment"># Dépendances Rust</span>
-│   └── tauri.conf.json           <span class="comment"># Config Tauri</span>
-│
-├── Configuration
-│   ├── package.json              <span class="comment"># NPM</span>
-│   ├── vite.config.ts            <span class="comment"># Vite</span>
-│   ├── tsconfig.json             <span class="comment"># TypeScript</span>
-│   └── tailwind.config.js        <span class="comment"># Tailwind</span></code></pre>
-            </div>
-        </div>
-    </section>
-
     <!-- Data Flow -->
     <section class="section">
         <div class="container">
@@ -524,50 +477,6 @@
         </div>
     </section>
 
-    <!-- Rust Backend -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Backend Rust</span>
-                <h2 class="section-title">Les commandes Tauri</h2>
-            </div>
-            <div class="rust-commands">
-                <div class="command-card">
-                    <code>start_claude_agent()</code>
-                    <p>Démarre une session Claude CLI</p>
-                </div>
-                <div class="command-card">
-                    <code>stop_claude_agent()</code>
-                    <p>Arrête la session en cours</p>
-                </div>
-                <div class="command-card">
-                    <code>send_tool_result()</code>
-                    <p>Envoie le résultat d'un outil</p>
-                </div>
-                <div class="command-card">
-                    <code>get_agent_status()</code>
-                    <p>Récupère l'état de l'agent</p>
-                </div>
-                <div class="command-card">
-                    <code>execute_command()</code>
-                    <p>Exécute des commandes shell</p>
-                </div>
-                <div class="command-card">
-                    <code>read_file() / write_file()</code>
-                    <p>Opérations fichiers sécurisées</p>
-                </div>
-                <div class="command-card">
-                    <code>get_directory_tree()</code>
-                    <p>Arborescence du projet</p>
-                </div>
-                <div class="command-card">
-                    <code>path_exists()</code>
-                    <p>Vérifie l'existence d'un chemin</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Why This Architecture -->
     <section class="section section-alt">
         <div class="container">
@@ -600,6 +509,10 @@
     <section class="section cta-section">
         <div class="container">
             <div class="cta-content">
+                <div class="launch-date-badge">
+                    <span class="rocket-icon">🚀</span>
+                    <span>Lancement : 1er Janvier 2026</span>
+                </div>
                 <h2>Envie de contribuer ?</h2>
                 <p>
                     François est open source. Venez construire l'IDE du futur avec nous.
@@ -612,7 +525,7 @@
                         </svg>
                         Voir sur GitHub
                     </a>
-                    <a href="index.html#download" class="btn btn-secondary btn-large">Télécharger François</a>
+                    <a href="index.html#waiting-list" class="btn btn-secondary btn-large">Rejoindre la liste d'attente</a>
                 </div>
             </div>
         </div>
