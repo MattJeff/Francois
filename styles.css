@@ -1096,6 +1096,211 @@ h4 { font-size: 1.125rem; }
     }
 }
 
+/* -------------------- About Page -------------------- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+    color: var(--claude-primary);
+}
+
+.about-content p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.about-content strong {
+    color: var(--text-primary);
+}
+
+.about-content em {
+    color: var(--claude-primary-light);
+}
+
+.about-cta {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.about-cta .btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.about-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: var(--space-xl);
+    position: sticky;
+    top: 100px;
+}
+
+.about-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.about-avatar {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--claude-primary), var(--claude-primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.about-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+}
+
+.about-info span {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.about-card-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.about-stat {
+    text-align: center;
+    padding: var(--space-md);
+    background: rgba(255,255,255,0.03);
+    border-radius: 12px;
+}
+
+.about-stat .stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--claude-primary);
+    margin-bottom: 4px;
+}
+
+.about-stat .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.about-card-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.about-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.about-link:hover {
+    background: rgba(217, 119, 87, 0.1);
+    color: var(--claude-primary);
+}
+
+.about-link svg {
+    flex-shrink: 0;
+}
+
+/* Vision Grid */
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.vision-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: var(--space-xl);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--claude-primary);
+}
+
+.vision-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+}
+
+.vision-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-md);
+    color: var(--claude-primary);
+}
+
+.vision-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* About page responsive */
+@media (max-width: 968px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        position: static;
+    }
+
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-card-body {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta {
+        flex-direction: column;
+    }
+
+    .about-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* -------------------- Footer -------------------- */
 .footer {
     background: var(--bg-darker);
