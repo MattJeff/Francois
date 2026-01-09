@@ -24,6 +24,7 @@
                 <li><a href="fonctionnalites.html" class="nav-link">Fonctionnalités</a></li>
                 <li><a href="architecture.html" class="nav-link active">Architecture</a></li>
                 <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+                <li><a href="docs/index.html" class="nav-link">Documentation</a></li>
             </ul>
             <a href="index.html#waiting-list" class="nav-cta">Liste d'attente</a>
             <button class="nav-toggle" aria-label="Menu">
@@ -69,16 +70,24 @@
                     <div class="stat-label">Composants React</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">30+</div>
-                    <div class="stat-label">Services Autopilot</div>
+                    <div class="stat-value">35</div>
+                    <div class="stat-label">Modules GPU</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">14</div>
+                    <div class="stat-label">Stores Zustand</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">8</div>
-                    <div class="stat-label">Agents IA</div>
+                    <div class="stat-label">Agents Autopilot</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">4</div>
-                    <div class="stat-label">Plugins Tauri</div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Agents Observer</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">30+</div>
+                    <div class="stat-label">Services TypeScript</div>
                 </div>
             </div>
         </div>
@@ -127,7 +136,14 @@
                             <div class="stack-icon">🐻</div>
                             <div class="stack-info">
                                 <strong>Zustand 5.0</strong>
-                                <span>State management</span>
+                                <span>State management (14 stores)</span>
+                            </div>
+                        </div>
+                        <div class="stack-item">
+                            <div class="stack-icon">📝</div>
+                            <div class="stack-info">
+                                <strong>Monaco Editor</strong>
+                                <span>Éditeur de code (VS Code)</span>
                             </div>
                         </div>
                         <div class="stack-item">
@@ -232,7 +248,8 @@
                     <div class="layer-content">
                         <div class="arch-box">36 Composants</div>
                         <div class="arch-box">8 Hooks</div>
-                        <div class="arch-box">5 Stores</div>
+                        <div class="arch-box">14 Stores</div>
+                        <div class="arch-box">Monaco Editor</div>
                     </div>
                 </div>
                 <div class="arch-arrow">↓</div>
@@ -250,6 +267,8 @@
                     <div class="layer-content">
                         <div class="arch-box">Process Manager</div>
                         <div class="arch-box">File Ops</div>
+                        <div class="arch-box">35 GPU Modules</div>
+                        <div class="arch-box">5 Observer Agents</div>
                         <div class="arch-box">Sandbox</div>
                         <div class="arch-box">MCP</div>
                     </div>
@@ -328,6 +347,175 @@
                     <div class="flow-content">
                         <h4>Re-render</h4>
                         <p>Affichage réponse</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GPU Architecture -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">⚡ GPU</span>
+                <h2 class="section-title">Architecture GPU - 35 Modules</h2>
+                <p class="section-description">
+                    Accélération matérielle via Metal API (macOS), CUDA (Linux/Windows), Vulkan (cross-platform).
+                    Recherche 8000x plus rapide sur 100K fichiers.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-category">
+                    <h3>Search & Indexing (12 modules)</h3>
+                    <ul class="service-list">
+                        <li><code>gpu_grep.rs</code> — Grep parallélisé sur GPU</li>
+                        <li><code>gpu_indexer.rs</code> — Indexation full-text</li>
+                        <li><code>gpu_fuzzy_search.rs</code> — Recherche floue</li>
+                        <li><code>gpu_regex_engine.rs</code> — Moteur regex GPU</li>
+                        <li><code>gpu_tokenizer.rs</code> — Tokenisation parallèle</li>
+                        <li><code>gpu_cache_l1.rs</code> — Cache L1 (GPU VRAM)</li>
+                        <li><code>gpu_cache_l2.rs</code> — Cache L2 (RAM partagée)</li>
+                        <li><code>gpu_cache_l3.rs</code> — Cache L3 (Disk SSD)</li>
+                        <li><code>gpu_invalidation.rs</code> — Invalidation cache</li>
+                        <li><code>gpu_compression.rs</code> — Compression index</li>
+                        <li><code>gpu_dedup.rs</code> — Déduplication</li>
+                        <li><code>gpu_stats.rs</code> — Statistiques temps réel</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Parsing & AST (10 modules)</h3>
+                    <ul class="service-list">
+                        <li><code>gpu_parser.rs</code> — Parser multi-langages</li>
+                        <li><code>gpu_ast_builder.rs</code> — Construction AST</li>
+                        <li><code>gpu_ast_traversal.rs</code> — Parcours AST</li>
+                        <li><code>gpu_semantic_analysis.rs</code> — Analyse sémantique</li>
+                        <li><code>gpu_type_inference.rs</code> — Inférence de types</li>
+                        <li><code>gpu_linter.rs</code> — Linting parallèle</li>
+                        <li><code>gpu_formatter.rs</code> — Formatting code</li>
+                        <li><code>gpu_refactor.rs</code> — Refactoring assisté</li>
+                        <li><code>gpu_symbol_resolver.rs</code> — Résolution symboles</li>
+                        <li><code>gpu_dependency_graph.rs</code> — Graphe dépendances</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Compute & Utils (13 modules)</h3>
+                    <ul class="service-list">
+                        <li><code>gpu_kernel_manager.rs</code> — Gestion kernels</li>
+                        <li><code>gpu_buffer_pool.rs</code> — Pool de buffers</li>
+                        <li><code>gpu_scheduler.rs</code> — Ordonnanceur tâches</li>
+                        <li><code>gpu_pipeline.rs</code> — Pipeline compute</li>
+                        <li><code>gpu_profiler.rs</code> — Profilage GPU</li>
+                        <li><code>gpu_memory_manager.rs</code> — Gestion mémoire</li>
+                        <li><code>gpu_transfer.rs</code> — Transferts CPU↔GPU</li>
+                        <li><code>gpu_sync.rs</code> — Synchronisation</li>
+                        <li><code>gpu_error_handling.rs</code> — Gestion erreurs</li>
+                        <li><code>gpu_fallback.rs</code> — Fallback CPU</li>
+                        <li><code>gpu_benchmark.rs</code> — Benchmarking</li>
+                        <li><code>gpu_metrics.rs</code> — Métriques perf</li>
+                        <li><code>gpu_telemetry.rs</code> — Télémétrie</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; color: white; text-align: center;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">⚡ Performance GPU</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 800;">3ms</div>
+                        <div style="opacity: 0.9;">100K files search</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 800;">8000x</div>
+                        <div style="opacity: 0.9;">Speedup vs CPU</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2.5rem; font-weight: 800;">12ms</div>
+                        <div style="opacity: 0.9;">Full indexing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Observer Architecture -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">👁️ Observer</span>
+                <h2 class="section-title">François Observer - 5 Agents de Surveillance</h2>
+                <p class="section-description">
+                    Système d'auto-monitoring temps réel. François s'observe lui-même pour garantir stabilité, performance et fiabilité.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-category">
+                    <h3>Performance Observer</h3>
+                    <ul class="service-list">
+                        <li><strong>Métriques FPS</strong> — 60 FPS UI target</li>
+                        <li><strong>Latence P50/P95/P99</strong> — Distribution complète</li>
+                        <li><strong>Throughput</strong> — Tokens/s, ops/s</li>
+                        <li><strong>Memory pressure</strong> — Détection fuites mémoire</li>
+                        <li><strong>Frame drops</strong> — Compteur + alertes</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Error Observer</h3>
+                    <ul class="service-list">
+                        <li><strong>Catégorisation auto</strong> — Critical/High/Medium/Low</li>
+                        <li><strong>Stack traces enrichis</strong> — Source maps + contexte</li>
+                        <li><strong>Deduplication</strong> — Groupement erreurs similaires</li>
+                        <li><strong>Rate limiting</strong> — Anti-spam logs</li>
+                        <li><strong>Alertes intelligentes</strong> — Seuils adaptatifs</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Resource Observer</h3>
+                    <ul class="service-list">
+                        <li><strong>CPU usage</strong> — Par core + total</li>
+                        <li><strong>RAM usage</strong> — Heap + Stack + VRAM</li>
+                        <li><strong>GPU usage</strong> — Utilisation + température</li>
+                        <li><strong>Disk I/O</strong> — Read/Write rates</li>
+                        <li><strong>Network I/O</strong> — Upload/Download</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Health Observer</h3>
+                    <ul class="service-list">
+                        <li><strong>Score composite 0-100</strong> — Agrégation pondérée</li>
+                        <li><strong>Checks actifs</strong> — API health, DB connection...</li>
+                        <li><strong>Degraded mode</strong> — Détection + fallback</li>
+                        <li><strong>Recovery auto</strong> — Tentatives de récupération</li>
+                        <li><strong>Status dashboard</strong> — Vue temps réel</li>
+                    </ul>
+                </div>
+                <div class="service-category">
+                    <h3>Timeline Observer</h3>
+                    <ul class="service-list">
+                        <li><strong>Buffer circulaire 100K</strong> — Événements FIFO</li>
+                        <li><strong>Rétention 24h</strong> — Archivage automatique</li>
+                        <li><strong>Export JSON/CSV</strong> — Pour analyse externe</li>
+                        <li><strong>Filtrage avancé</strong> — Par type, niveau, agent</li>
+                        <li><strong>Replay events</strong> — Debugging temporel</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; color: white;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">👁️ Observer en Action</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                    <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; text-align: center; backdrop-filter: blur(10px);">
+                        <div style="font-size: 2rem; font-weight: 800;">94/100</div>
+                        <div style="opacity: 0.9; font-size: 0.9rem;">Health Score</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; text-align: center; backdrop-filter: blur(10px);">
+                        <div style="font-size: 2rem; font-weight: 800;">0</div>
+                        <div style="opacity: 0.9; font-size: 0.9rem;">Critical Errors</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; text-align: center; backdrop-filter: blur(10px);">
+                        <div style="font-size: 2rem; font-weight: 800;">42K</div>
+                        <div style="opacity: 0.9; font-size: 0.9rem;">Events (24h)</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; text-align: center; backdrop-filter: blur(10px);">
+                        <div style="font-size: 2rem; font-weight: 800;">23%</div>
+                        <div style="opacity: 0.9; font-size: 0.9rem;">CPU Usage</div>
                     </div>
                 </div>
             </div>
@@ -555,7 +743,9 @@
                     <div class="footer-column">
                         <h4>Ressources</h4>
                         <ul>
-                            <li><a href="#">Documentation</a></li>
+                            <li><a href="docs/index.html">Documentation</a></li>
+                            <li><a href="docs/getting-started.html">Getting Started</a></li>
+                            <li><a href="docs/api-reference/index.html">API Reference</a></li>
                             <li><a href="https://github.com/MattJeff/FrancoisbuyClaude.git" target="_blank">GitHub</a></li>
                             <li><a href="#">Changelog</a></li>
                         </ul>

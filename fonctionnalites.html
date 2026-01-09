@@ -24,6 +24,7 @@
                 <li><a href="fonctionnalites.html" class="nav-link active">Fonctionnalités</a></li>
                 <li><a href="architecture.html" class="nav-link">Architecture</a></li>
                 <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+                <li><a href="docs/index.html" class="nav-link">Documentation</a></li>
             </ul>
             <a href="index.html#waiting-list" class="nav-cta">Liste d'attente</a>
             <button class="nav-toggle" aria-label="Menu">
@@ -52,10 +53,219 @@
         </div>
     </header>
 
-    <!-- Thinking Visualization -->
+    <!-- GPU Acceleration -->
     <section class="section">
         <div class="container">
             <div class="feature-detail">
+                <div class="feature-detail-content">
+                    <div class="feature-badge">⚡ GPU</div>
+                    <h2>Accélération GPU Native</h2>
+                    <p class="feature-intro">
+                        35 modules GPU exploitant Metal API (macOS), CUDA (Linux/Windows) pour des performances jamais vues.
+                        <strong>8000x plus rapide</strong> sur la recherche dans 100 000 fichiers.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Recherche parallélisée</strong>
+                                <p>100K fichiers en 3ms au lieu de 45s. Grep GPU-accelerated.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Indexation temps réel</strong>
+                                <p>Codebase entière indexée à la volée. Auto-refresh intelligent.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Analyse syntaxique</strong>
+                                <p>Parsing et AST sur GPU. Détection de patterns ultra-rapide.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Cache intelligent</strong>
+                                <p>3-tier caching (L1/L2/L3). Invalidation incrémentale.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="benchmark-box">
+                        <h4>⚡ Benchmark GPU vs CPU</h4>
+                        <div class="benchmark-stat">
+                            <span class="bench-label">100K files search:</span>
+                            <span class="bench-value">3ms (GPU) vs 45s (CPU)</span>
+                        </div>
+                        <div class="benchmark-stat">
+                            <span class="bench-label">Full codebase indexing:</span>
+                            <span class="bench-value">12ms (GPU) vs 8.2s (CPU)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-detail-visual">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3rem; border-radius: 12px; color: white; text-align: center;">
+                        <h3 style="font-size: 2rem; margin-bottom: 1rem;">⚡ GPU Acceleration</h3>
+                        <div style="font-size: 4rem; font-weight: 800; margin: 2rem 0;">8000x</div>
+                        <p style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 2rem;">plus rapide</p>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 8px; backdrop-filter: blur(10px);">
+                            <div style="font-size: 1.1rem; margin-bottom: 0.5rem;">35 Modules GPU</div>
+                            <div style="font-size: 0.9rem; opacity: 0.8;">Metal API • CUDA • Vulkan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- François Observer -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="feature-detail reverse">
+                <div class="feature-detail-content">
+                    <div class="feature-badge">👁️ Observer</div>
+                    <h2>François Observer</h2>
+                    <p class="feature-intro">
+                        Système d'auto-surveillance intelligent à <strong>5 agents spécialisés</strong>.
+                        François s'observe en temps réel pour garantir stabilité et performance.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Performance Observer</strong>
+                                <p>Métriques temps réel : FPS, latence, throughput, tail latencies</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Error Observer</strong>
+                                <p>Catégorisation auto : critical, high, medium, low. Stack traces enrichis.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Resource Observer</strong>
+                                <p>Usage CPU/RAM/GPU/Disk en temps réel. Alertes sur dépassements.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Health Observer</strong>
+                                <p>Score santé 0-100. Calcul composite avec pondération dynamique.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Timeline Observer</strong>
+                                <p>Buffer circulaire 100K événements. Rétention 24h. Export JSON/CSV.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-detail-visual">
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 3rem; border-radius: 12px; color: white;">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">👁️ François Observer</h3>
+                        <div style="background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 8px; backdrop-filter: blur(10px); margin-bottom: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                <span>Health Score</span>
+                                <span style="font-weight: 800; font-size: 1.5rem;">94/100</span>
+                            </div>
+                            <div style="height: 8px; background: rgba(255,255,255,0.2); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 94%; height: 100%; background: #4ade80;"></div>
+                            </div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 6px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            #1 Performance: 98%
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 6px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            #2 Error: 0 critical
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 6px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            #3 Resource: CPU 23%
+                        </div>
+                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 6px; font-size: 0.9rem; margin-bottom: 0.5rem;">
+                            #4 Timeline: 42K events
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monaco Editor -->
+    <section class="section">
+        <div class="container">
+            <div class="feature-detail">
+                <div class="feature-detail-content">
+                    <div class="feature-badge">📝 Éditeur</div>
+                    <h2>Monaco Editor Intégré</h2>
+                    <p class="feature-intro">
+                        Le même éditeur que VS Code, directement dans François. IntelliSense, refactoring, debugging — tout y est.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>IntelliSense Full</strong>
+                                <p>Autocomplétion, signatures, documentation au survol</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Support multi-langages</strong>
+                                <p>TypeScript, Python, Rust, Go, Java, C++, et 50+ autres</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Refactoring avancé</strong>
+                                <p>Renommage, extraction, déplacement — assisté par IA</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Diff View</strong>
+                                <p>Comparaison side-by-side avant/après modification Claude</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <div>
+                                <strong>Extensions VS Code</strong>
+                                <p>Compatible avec l'écosystème d'extensions VS Code</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-detail-visual">
+                    <div class="app-window">
+                        <div class="window-bar">
+                            <span class="window-dot red"></span>
+                            <span class="window-dot yellow"></span>
+                            <span class="window-dot green"></span>
+                        </div>
+                        <img src="image-2.png" alt="Monaco Editor" class="app-screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thinking Visualization -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="feature-detail reverse">
                 <div class="feature-detail-content">
                     <div class="feature-badge">🧠 Visualisation</div>
                     <h2>Voyez l'IA Réfléchir</h2>
@@ -108,7 +318,7 @@
     </section>
 
     <!-- Voice Control -->
-    <section class="section section-alt">
+    <section class="section">
         <div class="container">
             <div class="feature-detail reverse">
                 <div class="feature-detail-content">
@@ -179,7 +389,7 @@
     </section>
 
     <!-- Navigation -->
-    <section class="section">
+    <section class="section section-alt">
         <div class="container">
             <div class="feature-detail">
                 <div class="feature-detail-content">
@@ -234,7 +444,7 @@
     </section>
 
     <!-- Chat Interface -->
-    <section class="section section-alt">
+    <section class="section">
         <div class="container">
             <div class="feature-detail reverse">
                 <div class="feature-detail-content">
@@ -289,7 +499,7 @@
     </section>
 
     <!-- Multi-Projects -->
-    <section class="section">
+    <section class="section section-alt">
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">📂 Multi-Projets</span>
@@ -379,7 +589,7 @@
     </section>
 
     <!-- Security -->
-    <section class="section">
+    <section class="section section-alt">
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">🔒 Sécurité</span>
@@ -415,7 +625,7 @@
     </section>
 
     <!-- Custom Agents -->
-    <section class="section section-alt">
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">🤖 Agents Custom</span>
@@ -461,7 +671,7 @@
     </section>
 
     <!-- Performance -->
-    <section class="section">
+    <section class="section section-alt">
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">⚡ Performance</span>
@@ -521,13 +731,25 @@
     </section>
 
     <!-- All Features Grid -->
-    <section class="section section-alt">
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-badge">📋 Récap</span>
                 <h2 class="section-title">Toutes les fonctionnalités</h2>
             </div>
             <div class="all-features-grid">
+                <div class="all-feature">
+                    <span class="af-icon">⚡</span>
+                    <span class="af-name">Accélération GPU (35 modules)</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">👁️</span>
+                    <span class="af-name">François Observer (5 agents)</span>
+                </div>
+                <div class="all-feature">
+                    <span class="af-icon">📝</span>
+                    <span class="af-name">Monaco Editor Intégré</span>
+                </div>
                 <div class="all-feature">
                     <span class="af-icon">🤖</span>
                     <span class="af-name">Autopilot Multi-Agents</span>
@@ -640,7 +862,9 @@
                     <div class="footer-column">
                         <h4>Ressources</h4>
                         <ul>
-                            <li><a href="#">Documentation</a></li>
+                            <li><a href="docs/index.html">Documentation</a></li>
+                            <li><a href="docs/getting-started.html">Getting Started</a></li>
+                            <li><a href="docs/api-reference/index.html">API Reference</a></li>
                             <li><a href="https://github.com/MattJeff/FrancoisbuyClaude.git" target="_blank">GitHub</a></li>
                             <li><a href="#">Changelog</a></li>
                         </ul>
