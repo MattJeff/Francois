@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - François</title>
+    <link rel="stylesheet" href="docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="docs-sidebar">
+            <a href="../index.html" class="docs-logo">
+                <span>🚀</span>
+                <span>François</span>
+            </a>
+
+            <nav class="docs-nav">
+                <div class="docs-nav-section">
+                    <h3>Getting Started</h3>
+                    <a href="index.html" class="docs-nav-link active">Introduction</a>
+                    <a href="getting-started.html" class="docs-nav-link">Installation</a>
+                </div>
+
+                <div class="docs-nav-section">
+                    <h3>Features</h3>
+                    <a href="features/gpu-acceleration.html" class="docs-nav-link">GPU Acceleration</a>
+                    <a href="features/francois-observer.html" class="docs-nav-link">François Observer</a>
+                    <a href="features/autopilot.html" class="docs-nav-link">Autopilot System</a>
+                    <a href="features/monaco-editor.html" class="docs-nav-link">Monaco Editor</a>
+                </div>
+
+                <div class="docs-nav-section">
+                    <h3>API Reference</h3>
+                    <a href="api-reference/index.html" class="docs-nav-link">Overview</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-header">
+                <div class="docs-breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <span>Documentation</span>
+                </div>
+                <h1 class="docs-title">Documentation François</h1>
+                <p class="docs-description">
+                    Bienvenue dans la documentation complète de François — l'IDE du futur powered by Claude.
+                    Découvrez comment exploiter la puissance des 8 agents IA, l'accélération GPU, et toutes les fonctionnalités avancées.
+                </p>
+            </div>
+
+            <div class="docs-content">
+                <h2>📚 Qu'est-ce que François ?</h2>
+                <p>
+                    François est une application desktop (macOS, Linux, Windows) qui enveloppe et améliore Claude CLI avec une interface graphique moderne,
+                    un système d'agents multi-agents (Autopilot), et des fonctionnalités uniques comme l'accélération GPU et l'auto-surveillance (Observer).
+                </p>
+
+                <div class="callout callout-info">
+                    <h5>🚀 Version actuelle</h5>
+                    <p>François est actuellement en développement. Lancement prévu : <strong>1er Janvier 2026</strong></p>
+                </div>
+
+                <h2>🎯 Fonctionnalités Principales</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>⚡ GPU Acceleration</h3>
+                        <p>35 modules GPU utilisant Metal (macOS), CUDA (Linux/Windows) pour une recherche 8000x plus rapide.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>👁️ François Observer</h3>
+                        <p>5 agents de surveillance qui observent François en temps réel : performance, erreurs, ressources, santé, timeline.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🤖 Autopilot Multi-Agents</h3>
+                        <p>8 agents IA spécialisés (Analyst, Architect, Coder, Tester, Reviewer, DevOps, Orchestrator, Fullstack) qui collaborent.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📝 Monaco Editor</h3>
+                        <p>Le même éditeur que VS Code intégré : IntelliSense, refactoring, support 50+ langages.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🧠 Thinking Visualization</h3>
+                        <p>Visualisez le processus de réflexion de Claude en temps réel avec une timeline interactive.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎤 Voice Control</h3>
+                        <p>Contrôle vocal en 4 langues (FR, EN, ES, DE) avec transcription temps réel et TTS.</p>
+                    </div>
+                </div>
+
+                <h2>🏗️ Stack Technique</h2>
+                <p><strong>Frontend:</strong> React 19.2, TypeScript 5.9, Vite 7.2, Tailwind CSS 3.4, Zustand 5.0 (14 stores), Monaco Editor</p>
+                <p><strong>Backend:</strong> Tauri 2.9, Rust 1.77, Tokio (async runtime)</p>
+                <p><strong>GPU:</strong> Metal API (macOS), CUDA (Linux/Windows), Vulkan (cross-platform)</p>
+                <p><strong>IA:</strong> Claude 3.5 Sonnet via Claude CLI</p>
+
+                <h2>📖 Structure de la Documentation</h2>
+                <ul>
+                    <li><strong>Getting Started</strong> — Installation, configuration initiale, premier projet</li>
+                    <li><strong>Features</strong> — Documentation approfondie de chaque fonctionnalité majeure</li>
+                    <li><strong>API Reference</strong> — Référence technique complète (Tauri commands, stores, services)</li>
+                    <li><strong>Guides</strong> — Tutoriels avancés et cas d'usage</li>
+                </ul>
+
+                <div class="callout callout-warning">
+                    <h5>⚠️ Note</h5>
+                    <p>Cette documentation est en construction active. Certaines sections seront complétées au fur et à mesure du développement de François.</p>
+                </div>
+
+                <h2>🔗 Liens Utiles</h2>
+                <ul>
+                    <li><a href="https://github.com/MattJeff/FrancoisbuyClaude.git" target="_blank">Repository GitHub</a> — Code source et contributions</li>
+                    <li><a href="../index.html">Site officiel</a> — Marketing et présentation</li>
+                    <li><a href="../autopilot.html">Autopilot</a> — Système multi-agents</li>
+                    <li><a href="../fonctionnalites.html">Fonctionnalités</a> — Toutes les features</li>
+                    <li><a href="../architecture.html">Architecture</a> — Stack technique détaillée</li>
+                </ul>
+            </div>
+
+            <div class="docs-nav-buttons">
+                <a href="../index.html" class="docs-nav-button">
+                    <span>← Précédent</span>
+                    <span>Accueil</span>
+                </a>
+                <a href="getting-started.html" class="docs-nav-button next">
+                    <span>Suivant →</span>
+                    <span>Installation</span>
+                </a>
+            </div>
+        </main>
+
+        <!-- Table of Contents -->
+        <aside class="docs-toc">
+            <h4>Sur cette page</h4>
+            <ul>
+                <li><a href="#qu-est-ce-que-francois">Qu'est-ce que François ?</a></li>
+                <li><a href="#fonctionnalites-principales">Fonctionnalités Principales</a></li>
+                <li><a href="#stack-technique">Stack Technique</a></li>
+                <li><a href="#structure-documentation">Structure Documentation</a></li>
+                <li><a href="#liens-utiles">Liens Utiles</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>

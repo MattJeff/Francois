@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - Documentation François</title>
+    <link rel="stylesheet" href="docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="docs-sidebar">
+            <a href="../index.html" class="docs-logo">
+                <span>🚀</span>
+                <span>François</span>
+            </a>
+
+            <nav class="docs-nav">
+                <div class="docs-nav-section">
+                    <h3>Getting Started</h3>
+                    <a href="index.html" class="docs-nav-link">Introduction</a>
+                    <a href="getting-started.html" class="docs-nav-link active">Installation</a>
+                </div>
+
+                <div class="docs-nav-section">
+                    <h3>Features</h3>
+                    <a href="features/gpu-acceleration.html" class="docs-nav-link">GPU Acceleration</a>
+                    <a href="features/francois-observer.html" class="docs-nav-link">François Observer</a>
+                    <a href="features/autopilot.html" class="docs-nav-link">Autopilot System</a>
+                    <a href="features/monaco-editor.html" class="docs-nav-link">Monaco Editor</a>
+                </div>
+
+                <div class="docs-nav-section">
+                    <h3>API Reference</h3>
+                    <a href="api-reference/index.html" class="docs-nav-link">Overview</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-header">
+                <div class="docs-breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <span>/</span>
+                    <a href="index.html">Documentation</a>
+                    <span>/</span>
+                    <span>Getting Started</span>
+                </div>
+                <h1 class="docs-title">Installation & Configuration</h1>
+                <p class="docs-description">
+                    Installez François en quelques minutes et configurez votre environnement de développement assisté par IA.
+                </p>
+            </div>
+
+            <div class="docs-content">
+                <div class="callout callout-warning">
+                    <h5>🚧 Version Pré-Release</h5>
+                    <p>François est actuellement en développement. Le lancement public est prévu pour le <strong>1er Janvier 2026</strong>. Cette page sera mise à jour avec les instructions d'installation officielles à cette date.</p>
+                </div>
+
+                <h2>📋 Prérequis Système</h2>
+
+                <h3>Système d'exploitation</h3>
+                <ul>
+                    <li><strong>macOS</strong> 11.0+ (Big Sur ou supérieur)</li>
+                    <li><strong>Linux</strong> (Ubuntu 20.04+, Fedora 35+, Arch Linux)</li>
+                    <li><strong>Windows</strong> 10/11 (64-bit)</li>
+                </ul>
+
+                <h3>Configuration minimale</h3>
+                <ul>
+                    <li><strong>RAM:</strong> 4 GB minimum, 8 GB recommandé</li>
+                    <li><strong>Stockage:</strong> 500 MB pour l'application, 2 GB recommandé pour les projets</li>
+                    <li><strong>Processeur:</strong> Intel Core i5 / AMD Ryzen 5 ou équivalent</li>
+                </ul>
+
+                <h3>Configuration recommandée (avec GPU)</h3>
+                <ul>
+                    <li><strong>GPU:</strong> Compatible Metal (macOS M1+/Intel Iris+) ou CUDA (NVIDIA GTX 1060+)</li>
+                    <li><strong>RAM:</strong> 16 GB+</li>
+                    <li><strong>VRAM:</strong> 4 GB+ (pour l'accélération GPU optimale)</li>
+                </ul>
+
+                <h3>Dépendances</h3>
+                <ul>
+                    <li><strong>Claude CLI</strong> — Requis (sera installé automatiquement si absent)</li>
+                    <li><strong>Node.js</strong> 18+ — Pour les projets TypeScript/JavaScript</li>
+                    <li><strong>Git</strong> — Pour les opérations de versioning</li>
+                </ul>
+
+                <h2>📦 Installation</h2>
+
+                <h3>macOS</h3>
+                <pre><code># Via Homebrew (recommandé)
+brew install francois
+
+# Ou téléchargement direct
+curl -fsSL https://francois.dev/install.sh | sh</code></pre>
+
+                <h3>Linux</h3>
+                <pre><code># Ubuntu/Debian
+sudo apt update
+sudo apt install francois
+
+# Fedora
+sudo dnf install francois
+
+# Arch Linux
+yay -S francois
+
+# Ou script universel
+curl -fsSL https://francois.dev/install.sh | sh</code></pre>
+
+                <h3>Windows</h3>
+                <pre><code># Via winget
+winget install Francois.Francois
+
+# Ou téléchargement .exe
+# https://github.com/MattJeff/FrancoisbuyClaude/releases</code></pre>
+
+                <h2>🔧 Configuration Initiale</h2>
+
+                <h3>1. Clé API Claude</h3>
+                <p>François nécessite une clé API Anthropic pour fonctionner. Obtenez-en une sur <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>.</p>
+
+                <pre><code># Configurer la clé API
+francois config set ANTHROPIC_API_KEY=sk-ant-xxxxx
+
+# Ou via variable d'environnement
+export ANTHROPIC_API_KEY=sk-ant-xxxxx</code></pre>
+
+                <h3>2. Choix du modèle par défaut</h3>
+                <pre><code># Sonnet (équilibre perf/coût, recommandé)
+francois config set DEFAULT_MODEL=claude-sonnet-4-5
+
+# Opus (qualité maximale, plus coûteux)
+francois config set DEFAULT_MODEL=claude-opus-4
+
+# Haiku (vitesse maximale, économique)
+francois config set DEFAULT_MODEL=claude-haiku-4</code></pre>
+
+                <h3>3. Activation GPU (optionnel)</h3>
+                <pre><code># Vérifier si le GPU est détecté
+francois gpu status
+
+# Activer l'accélération GPU
+francois config set GPU_ENABLED=true
+
+# Choix du backend
+francois config set GPU_BACKEND=metal  # macOS
+francois config set GPU_BACKEND=cuda   # Linux/Windows NVIDIA
+francois config set GPU_BACKEND=vulkan # Fallback universel</code></pre>
+
+                <div class="callout callout-info">
+                    <h5>💡 Astuce GPU</h5>
+                    <p>Si vous n'avez pas de GPU compatible, François fonctionnera parfaitement en mode CPU. L'accélération GPU est un bonus pour les très gros projets (100K+ fichiers).</p>
+                </div>
+
+                <h2>🚀 Premier Projet</h2>
+
+                <h3>1. Créer un nouveau projet</h3>
+                <pre><code># Créer et ouvrir un projet
+francois new mon-projet
+cd mon-projet
+francois open</code></pre>
+
+                <h3>2. Ou ouvrir un projet existant</h3>
+                <pre><code># Ouvrir le dossier actuel
+francois open .
+
+# Ouvrir un chemin spécifique
+francois open /path/to/project</code></pre>
+
+                <h3>3. Première conversation</h3>
+                <p>L'interface François s'ouvre. Essayez :</p>
+                <ul>
+                    <li><code>"Crée une API REST en TypeScript avec Express"</code></li>
+                    <li><code>"Ajoute des tests unitaires avec Jest"</code></li>
+                    <li><code>"Explique-moi l'architecture de ce projet"</code></li>
+                </ul>
+
+                <h2>⚙️ Configuration Avancée</h2>
+
+                <h3>Autopilot</h3>
+                <pre><code># Activer/désactiver l'Autopilot
+francois config set AUTOPILOT_ENABLED=true
+
+# Configurer les agents
+francois config set AUTOPILOT_ANALYST_MODEL=sonnet
+francois config set AUTOPILOT_ARCHITECT_MODEL=opus
+francois config set AUTOPILOT_CODER_MODEL=sonnet</code></pre>
+
+                <h3>Observer</h3>
+                <pre><code># Activer François Observer
+francois config set OBSERVER_ENABLED=true
+
+# Configurer la rétention des événements
+francois config set OBSERVER_TIMELINE_RETENTION=24h
+
+# Configurer les alertes
+francois config set OBSERVER_HEALTH_THRESHOLD=50</code></pre>
+
+                <h3>Voice Control</h3>
+                <pre><code># Activer le contrôle vocal
+francois config set VOICE_ENABLED=true
+
+# Choisir la langue
+francois config set VOICE_LANGUAGE=fr-FR  # Français
+francois config set VOICE_LANGUAGE=en-US  # Anglais US</code></pre>
+
+                <h2>🔍 Vérification de l'installation</h2>
+
+                <pre><code># Afficher la configuration actuelle
+francois config list
+
+# Tester l'API Claude
+francois test api
+
+# Tester le GPU (si activé)
+francois test gpu
+
+# Vérifier la santé globale
+francois health</code></pre>
+
+                <div class="callout callout-success">
+                    <h5>✅ Installation réussie !</h5>
+                    <p>Vous êtes prêt à utiliser François. Explorez la documentation des features pour découvrir toutes les possibilités.</p>
+                </div>
+
+                <h2>🆘 Problèmes Courants</h2>
+
+                <h3>Erreur "Claude CLI not found"</h3>
+                <pre><code># Installer Claude CLI manuellement
+npm install -g @anthropic-ai/claude-cli
+
+# Puis redémarrer François
+francois restart</code></pre>
+
+                <h3>GPU non détecté</h3>
+                <pre><code># Vérifier les drivers
+# macOS : Pas de drivers nécessaires (Metal natif)
+# Linux NVIDIA : installer nvidia-cuda-toolkit
+# Windows NVIDIA : installer CUDA Toolkit 12.0+
+
+# Forcer la réinitialisation GPU
+francois gpu reinit</code></pre>
+
+                <h3>Performances lentes</h3>
+                <ul>
+                    <li>Vérifier que le GPU est activé : <code>francois gpu status</code></li>
+                    <li>Essayer un modèle plus rapide : <code>francois config set DEFAULT_MODEL=haiku</code></li>
+                    <li>Réduire la taille du contexte : <code>francois config set MAX_CONTEXT_SIZE=100000</code></li>
+                </ul>
+            </div>
+
+            <div class="docs-nav-buttons">
+                <a href="index.html" class="docs-nav-button">
+                    <span>← Précédent</span>
+                    <span>Introduction</span>
+                </a>
+                <a href="features/gpu-acceleration.html" class="docs-nav-button next">
+                    <span>Suivant →</span>
+                    <span>GPU Acceleration</span>
+                </a>
+            </div>
+        </main>
+
+        <!-- Table of Contents -->
+        <aside class="docs-toc">
+            <h4>Sur cette page</h4>
+            <ul>
+                <li><a href="#prerequis-systeme">Prérequis Système</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#configuration-initiale">Configuration Initiale</a></li>
+                <li><a href="#premier-projet">Premier Projet</a></li>
+                <li><a href="#configuration-avancee">Configuration Avancée</a></li>
+                <li><a href="#problemes-courants">Problèmes Courants</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>
