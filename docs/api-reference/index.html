@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - Documentation François</title>
+    <link rel="stylesheet" href="../docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-layout">
+        <aside class="docs-sidebar">
+            <a href="../../index.html" class="docs-logo">
+                <span>🚀</span>
+                <span>François</span>
+            </a>
+            <nav class="docs-nav">
+                <div class="docs-nav-section">
+                    <h3>Getting Started</h3>
+                    <a href="../index.html" class="docs-nav-link">Introduction</a>
+                    <a href="../getting-started.html" class="docs-nav-link">Installation</a>
+                </div>
+                <div class="docs-nav-section">
+                    <h3>Features</h3>
+                    <a href="../features/gpu-acceleration.html" class="docs-nav-link">GPU Acceleration</a>
+                    <a href="../features/francois-observer.html" class="docs-nav-link">François Observer</a>
+                    <a href="../features/autopilot.html" class="docs-nav-link">Autopilot System</a>
+                    <a href="../features/monaco-editor.html" class="docs-nav-link">Monaco Editor</a>
+                </div>
+                <div class="docs-nav-section">
+                    <h3>API Reference</h3>
+                    <a href="index.html" class="docs-nav-link active">Overview</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="docs-main">
+            <div class="docs-header">
+                <div class="docs-breadcrumb">
+                    <a href="../../index.html">Home</a>
+                    <span>/</span>
+                    <a href="../index.html">Documentation</a>
+                    <span>/</span>
+                    <span>API Reference</span>
+                </div>
+                <h1 class="docs-title">🔧 API Reference</h1>
+                <p class="docs-description">
+                    Documentation complète de l'API François : Tauri Commands, Stores Zustand, Services TypeScript, et Configuration.
+                </p>
+            </div>
+
+            <div class="docs-content">
+                <h2>📦 Architecture Overview</h2>
+                <p>
+                    François utilise une architecture <strong>Tauri + React + TypeScript</strong> avec trois couches principales :
+                </p>
+                <ul>
+                    <li><strong>Backend Rust</strong> : Tauri Commands pour les opérations système (filesystem, GPU, processes)</li>
+                    <li><strong>State Management</strong> : 14 Zustand stores pour la gestion d'état réactive</li>
+                    <li><strong>Services TypeScript</strong> : 30+ services pour l'Autopilot, le GPU, l'Observer, et les intégrations externes</li>
+                </ul>
+
+                <h2>🦀 Tauri Commands (Rust Backend)</h2>
+                <p>
+                    Les Tauri Commands sont des fonctions Rust exposées au frontend TypeScript via l'API <code>invoke()</code>.
+                </p>
+
+                <h3>Filesystem Commands</h3>
+                <pre><code>// Read file
+invoke('read_file', { path: '/path/to/file.ts' })
+  → Promise&lt;string&gt;
+
+// Write file
+invoke('write_file', { path: '/path/to/file.ts', content: 'code...' })
+  → Promise&lt;void&gt;
+
+// List directory
+invoke('list_directory', { path: '/path/to/dir' })
+  → Promise&lt;FileEntry[]&gt;
+
+// Search files (glob)
+invoke('search_files', { pattern: '**/*.ts', cwd: '/project' })
+  → Promise&lt;string[]&gt;
+
+// Watch directory
+invoke('watch_directory', { path: '/project' })
+  → void (events via event listeners)</code></pre>
+
+                <h3>GPU Commands</h3>
+                <pre><code>// Initialize GPU backend
+invoke('gpu_init', { backend: 'metal' | 'cuda' | 'vulkan' })
+  → Promise&lt;GpuStatus&gt;
+
+// GPU grep
+invoke('gpu_grep', {
+  pattern: 'function\\s+\\w+',
+  files: string[],
+  options: { case_sensitive: boolean, regex: boolean }
+})
+  → Promise&lt;GrepResult[]&gt;
+
+// GPU parse
+invoke('gpu_parse_file', { path: '/file.ts', language: 'typescript' })
+  → Promise&lt;AstNode&gt;
+
+// GPU status
+invoke('gpu_status')
+  → Promise&lt;{ available: boolean, backend: string, memory: number }&gt;</code></pre>
+
+                <h3>Autopilot Commands</h3>
+                <pre><code>// Start mission
+invoke('autopilot_start', {
+  mission: {
+    description: 'Create REST API with JWT',
+    complexity: 7,
+    mode: 'standard' | 'fast'
+  }
+})
+  → Promise&lt;MissionId&gt;
+
+// Get mission status
+invoke('autopilot_status', { mission_id: string })
+  → Promise&lt;MissionStatus&gt;
+
+// Abort mission
+invoke('autopilot_abort', { mission_id: string })
+  → Promise&lt;void&gt;</code></pre>
+
+                <h3>Observer Commands</h3>
+                <pre><code>// Get metrics
+invoke('observer_get_metrics')
+  → Promise&lt;ObserverMetrics&gt;
+
+// Get health score
+invoke('observer_health_score')
+  → Promise&lt;number&gt;  // 0-100
+
+// Get timeline events
+invoke('observer_timeline', {
+  start: timestamp,
+  end: timestamp,
+  types?: string[]
+})
+  → Promise&lt;TimelineEvent[]&gt;</code></pre>
+
+                <h3>Process Commands</h3>
+                <pre><code>// Execute command
+invoke('execute_command', {
+  command: 'npm test',
+  cwd: '/project',
+  env?: Record&lt;string, string&gt;
+})
+  → Promise&lt;CommandOutput&gt;
+
+// Kill process
+invoke('kill_process', { pid: number })
+  → Promise&lt;void&gt;</code></pre>
+
+                <h2>🏪 Zustand Stores (State Management)</h2>
+                <p>François utilise 14 Zustand stores pour gérer l'état de l'application de manière réactive.</p>
+
+                <h3>1. useProjectStore</h3>
+                <pre><code>interface ProjectStore {
+  // State
+  currentProject: Project | null
+  files: FileTree
+  openFiles: FileEntry[]
+  activeFile: FileEntry | null
+
+  // Actions
+  loadProject: (path: string) =&gt; Promise&lt;void&gt;
+  openFile: (path: string) =&gt; void
+  closeFile: (path: string) =&gt; void
+  setActiveFile: (path: string) =&gt; void
+  refreshFiles: () =&gt; Promise&lt;void&gt;
+}
+
+// Usage
+const { currentProject, openFile } = useProjectStore()
+openFile('/src/App.tsx')</code></pre>
+
+                <h3>2. useEditorStore</h3>
+                <pre><code>interface EditorStore {
+  // State
+  monaco: Monaco | null
+  editor: IStandaloneCodeEditor | null
+  theme: string
+  fontSize: number
+  tabSize: number
+
+  // Actions
+  setMonaco: (monaco: Monaco) =&gt; void
+  setEditor: (editor: IStandaloneCodeEditor) =&gt; void
+  changeTheme: (theme: string) =&gt; void
+  updateSettings: (settings: EditorSettings) =&gt; void
+}</code></pre>
+
+                <h3>3. useAutopilotStore</h3>
+                <pre><code>interface AutopilotStore {
+  // State
+  missions: Mission[]
+  activeMission: Mission | null
+  currentAgent: AgentType | null
+  fsmState: FSMState
+
+  // Actions
+  startMission: (description: string) =&gt; Promise&lt;void&gt;
+  abortMission: (id: string) =&gt; Promise&lt;void&gt;
+  transitionState: (from: FSMState, to: FSMState) =&gt; void
+}</code></pre>
+
+                <h3>4. useObserverStore</h3>
+                <pre><code>interface ObserverStore {
+  // State
+  metrics: ObserverMetrics
+  healthScore: number
+  alerts: Alert[]
+  timeline: TimelineEvent[]
+
+  // Actions
+  updateMetrics: () =&gt; Promise&lt;void&gt;
+  acknowledgeAlert: (id: string) =&gt; void
+  exportTimeline: (format: 'json' | 'csv') =&gt; void
+}</code></pre>
+
+                <h3>5. useGpuStore</h3>
+                <pre><code>interface GpuStore {
+  // State
+  available: boolean
+  backend: 'metal' | 'cuda' | 'vulkan' | null
+  memory: number
+  utilization: number
+
+  // Actions
+  initialize: (backend?: string) =&gt; Promise&lt;void&gt;
+  getStatus: () =&gt; Promise&lt;GpuStatus&gt;
+}</code></pre>
+
+                <h3>6. useChatStore</h3>
+                <pre><code>interface ChatStore {
+  // State
+  messages: Message[]
+  isStreaming: boolean
+  model: 'sonnet' | 'opus' | 'haiku'
+
+  // Actions
+  sendMessage: (content: string) =&gt; Promise&lt;void&gt;
+  clearHistory: () =&gt; void
+  changeModel: (model: string) =&gt; void
+}</code></pre>
+
+                <h3>Autres Stores</h3>
+                <ul>
+                    <li><code>useSettingsStore</code> - Configuration globale</li>
+                    <li><code>useThemeStore</code> - Gestion des thèmes</li>
+                    <li><code>useNotificationStore</code> - Toast notifications</li>
+                    <li><code>useTerminalStore</code> - Terminal intégré</li>
+                    <li><code>useGitStore</code> - Opérations Git</li>
+                    <li><code>useSearchStore</code> - Recherche globale</li>
+                    <li><code>useExtensionStore</code> - Extensions Monaco</li>
+                    <li><code>useVoiceStore</code> - Voice control</li>
+                </ul>
+
+                <h2>🔧 TypeScript Services</h2>
+
+                <h3>AutopilotService</h3>
+                <pre><code>class AutopilotService {
+  // Start mission
+  async startMission(description: string, mode: 'standard' | 'fast'): Promise&lt;Mission&gt;
+
+  // Agent coordination
+  async executeAgent(agent: AgentType, context: AgentContext): Promise&lt;AgentResult&gt;
+
+  // FSM management
+  transitionState(mission: Mission, from: FSMState, to: FSMState): void
+
+  // Loop detection
+  detectLoop(mission: Mission): boolean
+}
+
+// Usage
+import { autopilotService } from '@/services/autopilot'
+
+const mission = await autopilotService.startMission(
+  'Create REST API with JWT',
+  'standard'
+)</code></pre>
+
+                <h3>GpuService</h3>
+                <pre><code>class GpuService {
+  // Initialize backend
+  async initialize(backend?: 'metal' | 'cuda' | 'vulkan'): Promise&lt;void&gt;
+
+  // GPU grep
+  async grep(pattern: string, files: string[]): Promise&lt;GrepResult[]&gt;
+
+  // GPU parse
+  async parseFile(path: string, language: string): Promise&lt;AstNode&gt;
+
+  // Get status
+  async getStatus(): Promise&lt;GpuStatus&gt;
+}</code></pre>
+
+                <h3>ObserverService</h3>
+                <pre><code>class ObserverService {
+  // Performance monitoring
+  async trackPerformance(metric: PerformanceMetric): Promise&lt;void&gt;
+
+  // Error tracking
+  async logError(error: Error, context: ErrorContext): Promise&lt;void&gt;
+
+  // Resource monitoring
+  async getResourceUsage(): Promise&lt;ResourceMetrics&gt;
+
+  // Health score
+  async calculateHealthScore(): Promise&lt;number&gt;
+
+  // Timeline
+  async addTimelineEvent(event: TimelineEvent): Promise&lt;void&gt;
+}</code></pre>
+
+                <h3>ClaudeService</h3>
+                <pre><code>class ClaudeService {
+  // Send message
+  async sendMessage(
+    messages: Message[],
+    options?: {
+      model?: 'sonnet' | 'opus' | 'haiku'
+      temperature?: number
+      max_tokens?: number
+      stream?: boolean
+    }
+  ): Promise&lt;Message&gt;
+
+  // Stream message
+  streamMessage(
+    messages: Message[],
+    onChunk: (chunk: string) =&gt; void
+  ): Promise&lt;void&gt;
+}</code></pre>
+
+                <h3>FileService</h3>
+                <pre><code>class FileService {
+  // Read file
+  async readFile(path: string): Promise&lt;string&gt;
+
+  // Write file
+  async writeFile(path: string, content: string): Promise&lt;void&gt;
+
+  // List directory
+  async listDirectory(path: string): Promise&lt;FileEntry[]&gt;
+
+  // Watch directory
+  watchDirectory(path: string, onChange: (events: FileEvent[]) =&gt; void): () =&gt; void
+}</code></pre>
+
+                <h2>⚙️ Configuration API</h2>
+
+                <h3>Configuration File</h3>
+                <p>François stocke sa configuration dans <code>~/.francois/config.json</code> :</p>
+                <pre><code>{
+  "anthropic_api_key": "sk-ant-xxxxx",
+  "default_model": "sonnet",
+  "gpu": {
+    "enabled": true,
+    "backend": "metal",
+    "memory_limit": 4096
+  },
+  "autopilot": {
+    "enabled": true,
+    "analyst_model": "sonnet",
+    "architect_model": "opus",
+    "coder_model": "sonnet",
+    "reviewer_model": "opus",
+    "tester_model": "haiku",
+    "devops_model": "sonnet"
+  },
+  "observer": {
+    "enabled": true,
+    "timeline_retention": "24h",
+    "health_threshold": 50
+  },
+  "editor": {
+    "theme": "francois-dark",
+    "font_family": "JetBrains Mono",
+    "font_size": 14,
+    "tab_size": 2,
+    "minimap": true
+  },
+  "voice": {
+    "enabled": false,
+    "language": "fr-FR"
+  }
+}</code></pre>
+
+                <h3>ConfigService</h3>
+                <pre><code>class ConfigService {
+  // Get config value
+  get&lt;T&gt;(key: string): T | undefined
+
+  // Set config value
+  async set(key: string, value: any): Promise&lt;void&gt;
+
+  // List all config
+  async list(): Promise&lt;Record&lt;string, any&gt;&gt;
+
+  // Reset to defaults
+  async reset(): Promise&lt;void&gt;
+}
+
+// Usage
+import { configService } from '@/services/config'
+
+// Get value
+const apiKey = configService.get&lt;string&gt;('anthropic_api_key')
+
+// Set value
+await configService.set('default_model', 'opus')
+
+// Nested keys
+await configService.set('gpu.backend', 'cuda')</code></pre>
+
+                <h2>📡 Event System</h2>
+                <p>François utilise un système d'événements pour la communication entre composants.</p>
+
+                <h3>Event Types</h3>
+                <pre><code>type FrancoisEvent =
+  | { type: 'file:changed', path: string }
+  | { type: 'file:created', path: string }
+  | { type: 'file:deleted', path: string }
+  | { type: 'mission:started', mission: Mission }
+  | { type: 'mission:completed', mission: Mission }
+  | { type: 'mission:failed', mission: Mission, error: Error }
+  | { type: 'agent:transition', from: AgentType, to: AgentType }
+  | { type: 'fsm:transition', from: FSMState, to: FSMState }
+  | { type: 'observer:alert', alert: Alert }
+  | { type: 'observer:health', score: number }
+  | { type: 'gpu:status', status: GpuStatus }</code></pre>
+
+                <h3>EventBus</h3>
+                <pre><code>class EventBus {
+  // Subscribe to events
+  on&lt;T extends FrancoisEvent&gt;(
+    type: T['type'],
+    handler: (event: T) =&gt; void
+  ): () =&gt; void
+
+  // Emit event
+  emit&lt;T extends FrancoisEvent&gt;(event: T): void
+
+  // Once
+  once&lt;T extends FrancoisEvent&gt;(
+    type: T['type'],
+    handler: (event: T) =&gt; void
+  ): void
+}
+
+// Usage
+import { eventBus } from '@/services/eventBus'
+
+// Subscribe
+const unsubscribe = eventBus.on('mission:started', (event) =&gt; {
+  console.log('Mission started:', event.mission.id)
+})
+
+// Emit
+eventBus.emit({ type: 'mission:started', mission })
+
+// Cleanup
+unsubscribe()</code></pre>
+
+                <h2>🔐 Types & Interfaces</h2>
+
+                <h3>Core Types</h3>
+                <pre><code>interface Project {
+  id: string
+  name: string
+  path: string
+  language: string
+  framework?: string
+  git?: {
+    branch: string
+    remote: string
+  }
+}
+
+interface FileEntry {
+  path: string
+  name: string
+  type: 'file' | 'directory'
+  size: number
+  modified: number
+  language?: string
+}
+
+interface Message {
+  id: string
+  role: 'user' | 'assistant'
+  content: string
+  timestamp: number
+  model?: string
+}
+
+interface Mission {
+  id: string
+  description: string
+  complexity: number
+  mode: 'standard' | 'fast'
+  status: MissionStatus
+  fsmState: FSMState
+  agents: AgentExecution[]
+  startTime: number
+  endTime?: number
+}
+
+type MissionStatus = 'idle' | 'running' | 'paused' | 'completed' | 'failed'
+
+type FSMState =
+  | 'IDLE'
+  | 'ANALYZING'
+  | 'CLARIFYING'
+  | 'PLANNING'
+  | 'EXECUTING'
+  | 'TESTING'
+  | 'FIXING'
+  | 'REVIEWING'
+  | 'DEPLOYING'
+  | 'COMPLETED'
+
+type AgentType =
+  | 'analyst'
+  | 'architect'
+  | 'coder'
+  | 'tester'
+  | 'reviewer'
+  | 'devops'
+  | 'orchestrator'
+  | 'fullstack'
+
+interface AgentExecution {
+  agent: AgentType
+  startTime: number
+  endTime?: number
+  result?: AgentResult
+  confidence: number
+}
+
+interface ObserverMetrics {
+  performance: {
+    fps: number
+    latency_p50: number
+    latency_p95: number
+    latency_p99: number
+    throughput: number
+  }
+  resources: {
+    cpu: number
+    ram: number
+    gpu: number
+    disk: number
+  }
+  errors: {
+    total: number
+    by_level: Record&lt;ErrorLevel, number&gt;
+  }
+  health: {
+    score: number
+    status: 'healthy' | 'degraded' | 'critical'
+  }
+}</code></pre>
+
+                <div class="callout callout-success">
+                    <h5>💡 Pro Tip</h5>
+                    <p>Utilisez TypeScript et activez <code>strict: true</code> dans votre <code>tsconfig.json</code> pour bénéficier de l'autocomplétion complète de l'API François.</p>
+                </div>
+
+                <h2>📚 Example: Complete Workflow</h2>
+                <pre><code>import { useProjectStore } from '@/stores/project'
+import { useAutopilotStore } from '@/stores/autopilot'
+import { autopilotService } from '@/services/autopilot'
+import { eventBus } from '@/services/eventBus'
+
+async function createFeature() {
+  // 1. Load project
+  const { loadProject, currentProject } = useProjectStore.getState()
+  await loadProject('/path/to/project')
+
+  // 2. Start Autopilot mission
+  const mission = await autopilotService.startMission(
+    'Add user authentication with JWT',
+    'standard'
+  )
+
+  // 3. Listen to mission events
+  eventBus.on('mission:completed', (event) =&gt; {
+    console.log('✅ Mission completed:', event.mission.id)
+    console.log('Files changed:', event.mission.filesChanged)
+  })
+
+  eventBus.on('agent:transition', (event) =&gt; {
+    console.log(`🤖 Agent transition: ${event.from} → ${event.to}`)
+  })
+
+  // 4. Monitor health
+  const { updateMetrics, healthScore } = useObserverStore.getState()
+  await updateMetrics()
+
+  if (healthScore &lt; 50) {
+    console.warn('⚠️ Low health score:', healthScore)
+  }
+}</code></pre>
+            </div>
+
+            <div class="docs-nav-buttons">
+                <a href="../features/monaco-editor.html" class="docs-nav-button">
+                    <span>← Précédent</span>
+                    <span>Monaco Editor</span>
+                </a>
+            </div>
+        </main>
+
+        <aside class="docs-toc">
+            <h4>Sur cette page</h4>
+            <ul>
+                <li><a href="#architecture-overview">Architecture</a></li>
+                <li><a href="#tauri-commands">Tauri Commands</a></li>
+                <li><a href="#zustand-stores">Zustand Stores</a></li>
+                <li><a href="#typescript-services">TypeScript Services</a></li>
+                <li><a href="#configuration-api">Configuration</a></li>
+                <li><a href="#event-system">Event System</a></li>
+                <li><a href="#types-interfaces">Types & Interfaces</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>

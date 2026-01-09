@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>François Observer - Documentation François</title>
+    <link rel="stylesheet" href="../docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-layout">
+        <!-- Sidebar -->
+        <aside class="docs-sidebar">
+            <a href="../../index.html" class="docs-logo">
+                <span>🚀</span>
+                <span>François</span>
+            </a>
+
+            <nav class="docs-nav">
+                <div class="docs-nav-section">
+                    <h3>Getting Started</h3>
+                    <a href="../index.html" class="docs-nav-link">Introduction</a>
+                    <a href="../getting-started.html" class="docs-nav-link">Installation</a>
+                </div>
+
+                <div class="docs-nav-section">
+                    <h3>Features</h3>
+                    <a href="gpu-acceleration.html" class="docs-nav-link">GPU Acceleration</a>
+                    <a href="francois-observer.html" class="docs-nav-link active">François Observer</a>
+                    <a href="autopilot.html" class="docs-nav-link">Autopilot System</a>
+                    <a href="monaco-editor.html" class="docs-nav-link">Monaco Editor</a>
+                </div>
+
+                <div class="docs-nav-section">
+                    <h3>API Reference</h3>
+                    <a href="../api-reference/index.html" class="docs-nav-link">Overview</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-header">
+                <div class="docs-breadcrumb">
+                    <a href="../../index.html">Home</a>
+                    <span>/</span>
+                    <a href="../index.html">Documentation</a>
+                    <span>/</span>
+                    <span>François Observer</span>
+                </div>
+                <h1 class="docs-title">👁️ François Observer</h1>
+                <p class="docs-description">
+                    Système d'auto-surveillance intelligent à 5 agents spécialisés. François s'observe lui-même en temps réel pour garantir stabilité, performance et fiabilité.
+                </p>
+            </div>
+
+            <div class="docs-content">
+                <div class="callout callout-info">
+                    <h5>🧠 Concept</h5>
+                    <p>François Observer est un système de <strong>self-monitoring</strong> : François utilise 5 agents IA pour s'observer lui-même, détecter les problèmes, et s'auto-corriger.</p>
+                </div>
+
+                <h2>📊 Vue d'ensemble</h2>
+                <p>
+                    L'Observer est composé de <strong>5 agents spécialisés</strong> qui tournent en permanence en arrière-plan et surveillent différents aspects de François :
+                </p>
+
+                <ul>
+                    <li><strong>Performance Observer</strong> — Métriques de performance (FPS, latence, throughput)</li>
+                    <li><strong>Error Observer</strong> — Détection et catégorisation des erreurs</li>
+                    <li><strong>Resource Observer</strong> — Usage CPU/RAM/GPU/Disk</li>
+                    <li><strong>Health Observer</strong> — Score de santé composite (0-100)</li>
+                    <li><strong>Timeline Observer</strong> — Timeline d'événements (100K buffer, 24h retention)</li>
+                </ul>
+
+                <p>
+                    Tous les agents communiquent via un <strong>event bus</strong> et publient leurs observations dans des stores Zustand accessibles à l'UI.
+                </p>
+
+                <h2>🎯 Objectifs</h2>
+                <ul>
+                    <li><strong>Détection proactive</strong> : Identifier les problèmes avant qu'ils n'impactent l'utilisateur</li>
+                    <li><strong>Debugging facilité</strong> : Timeline détaillée de tous les événements pour reproduire les bugs</li>
+                    <li><strong>Auto-correction</strong> : Recovery automatique pour certaines erreurs (reconnexion API, garbage collection...)</li>
+                    <li><strong>Observabilité</strong> : Dashboard temps réel de la santé de François</li>
+                </ul>
+
+                <h2>🔍 Agent 1 : Performance Observer</h2>
+
+                <h3>Responsabilités</h3>
+                <p>
+                    Surveille les performances temps réel de François : FPS de l'UI, latence des opérations, throughput du CPU/GPU.
+                </p>
+
+                <h3>Métriques collectées</h3>
+                <ul>
+                    <li><strong>FPS UI</strong> : Frame rate de l'interface (target 60 FPS)</li>
+                    <li><strong>Latence P50/P95/P99</strong> : Distribution des latences pour chaque opération (search, parse, render...)</li>
+                    <li><strong>Throughput</strong> : Tokens/s (Claude), Ops/s (GPU), MB/s (I/O)</li>
+                    <li><strong>Frame drops</strong> : Nombre de frames &lt;16.67ms (détecte les freezes UI)</li>
+                    <li><strong>Memory pressure</strong> : Détection de fuites mémoire (heap growth anormal)</li>
+                    <li><strong>Event loop lag</strong> : Mesure si l'event loop JavaScript est bloquée</li>
+                </ul>
+
+                <h3>Alertes</h3>
+                <pre><code>// Alerte si FPS &lt; 30 pendant &gt;2s
+if (fps < 30 && duration > 2000) {
+    observer.alert({
+        level: "high",
+        message: "UI freeze detected",
+        context: { fps, duration }
+    });
+}</code></pre>
+
+                <h3>Visualisation</h3>
+                <p>
+                    Dashboard temps réel dans l'UI avec graphes sparkline : FPS, latence P99, throughput GPU.
+                    Accessible via <code>Cmd+Shift+P</code> → "Show Performance Dashboard".
+                </p>
+
+                <h2>🚨 Agent 2 : Error Observer</h2>
+
+                <h3>Responsabilités</h3>
+                <p>
+                    Intercepte toutes les erreurs (JavaScript, Rust, Claude API) et les catégorise intelligemment.
+                </p>
+
+                <h3>Catégorisation automatique</h3>
+                <ul>
+                    <li><strong>Critical</strong> : Erreurs bloquantes (crash, API key invalide, device lost...)</li>
+                    <li><strong>High</strong> : Erreurs impactantes (file operation failed, parse error, network timeout...)</li>
+                    <li><strong>Medium</strong> : Erreurs récupérables (cache miss, retry succeeded...)</li>
+                    <li><strong>Low</strong> : Warnings (deprecated API, slow operation...)</li>
+                </ul>
+
+                <h3>Stack traces enrichis</h3>
+                <p>
+                    L'Observer enrichit les stack traces avec du contexte :
+                </p>
+                <pre><code>Error: Failed to parse file
+  at gpu_parser.rs:245
+  → Context:
+    - File: src/components/Button.tsx
+    - Size: 4.2 KB
+    - Language: TypeScript
+    - GPU Backend: Metal
+    - Last modified: 2s ago
+  → Recent events:
+    - [T-3s] File opened
+    - [T-2s] Content changed
+    - [T-1s] Parse triggered
+    - [T-0s] Parse failed</code></pre>
+
+                <h3>Deduplication</h3>
+                <p>
+                    Groupe les erreurs similaires pour éviter de spammer les logs. Si la même erreur se répète 10x en 5s, affiche "Error x10" au lieu de 10 lignes.
+                </p>
+
+                <h3>Auto-recovery</h3>
+                <pre><code>// Exemple : reconnexion API automatique
+if (error.type === "ApiConnectionLost") {
+    observer.attempt_recovery(async () => {
+        await reconnect_api();
+        await retry_last_request();
+    });
+}</code></pre>
+
+                <h2>💻 Agent 3 : Resource Observer</h2>
+
+                <h3>Responsabilités</h3>
+                <p>
+                    Surveille l'usage des ressources système : CPU, RAM, GPU, Disk I/O, Network I/O.
+                </p>
+
+                <h3>Métriques collectées</h3>
+                <ul>
+                    <li><strong>CPU usage</strong> : % par core + total (via sysinfo crate Rust)</li>
+                    <li><strong>RAM usage</strong> : Heap JS, Stack Rust, VRAM GPU, Swap</li>
+                    <li><strong>GPU usage</strong> : Utilisation %, température, fan speed, power draw</li>
+                    <li><strong>Disk I/O</strong> : Read/Write MB/s, IOPS, queue depth</li>
+                    <li><strong>Network I/O</strong> : Upload/Download KB/s (pour Claude API)</li>
+                </ul>
+
+                <h3>Alertes sur dépassements</h3>
+                <pre><code>// Alerte si RAM &gt; 90%
+if (ram_usage > 0.9) {
+    observer.alert({
+        level: "critical",
+        message: "High memory usage",
+        action: "Trigger garbage collection"
+    });
+    // Déclenche GC forcé
+    trigger_gc();
+}</code></pre>
+
+                <h3>Throttling intelligent</h3>
+                <p>
+                    Si le système est sous pression (CPU &gt;90%, RAM &gt;80%), l'Observer throttle automatiquement les opérations non-critiques :
+                </p>
+                <ul>
+                    <li>Pause l'indexation GPU en arrière-plan</li>
+                    <li>Réduit la fréquence du file watcher</li>
+                    <li>Désactive les animations UI non essentielles</li>
+                </ul>
+
+                <h2>❤️ Agent 4 : Health Observer</h2>
+
+                <h3>Responsabilités</h3>
+                <p>
+                    Calcule un <strong>score de santé global</strong> (0-100) basé sur toutes les métriques des autres Observers.
+                </p>
+
+                <h3>Calcul du score</h3>
+                <pre><code>health_score = (
+    0.3 * performance_score +  // 30% weight
+    0.3 * error_score +         // 30% weight
+    0.2 * resource_score +      // 20% weight
+    0.2 * stability_score       // 20% weight
+)
+
+// Exemple de calcul
+performance_score = fps >= 50 ? 100 : (fps / 50) * 100
+error_score = 100 - (critical_errors * 20 + high_errors * 5)
+resource_score = 100 - max(cpu_usage, ram_usage, gpu_usage)
+stability_score = uptime_hours / 24 * 100  // bonus si pas de crash</code></pre>
+
+                <h3>Seuils d'alerte</h3>
+                <ul>
+                    <li><strong>90-100</strong> : Excellent ✅ (vert)</li>
+                    <li><strong>70-89</strong> : Bon ⚠️ (jaune)</li>
+                    <li><strong>50-69</strong> : Dégradé ⚠️ (orange)</li>
+                    <li><strong>&lt;50</strong> : Critique 🚨 (rouge) → Alerte utilisateur</li>
+                </ul>
+
+                <h3>Checks actifs</h3>
+                <p>
+                    L'Observer effectue des checks actifs toutes les 30s :
+                </p>
+                <ul>
+                    <li>Claude API reachable ? (ping)</li>
+                    <li>GPU responsive ? (test kernel)</li>
+                    <li>File system writable ? (test write)</li>
+                    <li>Sufficient disk space ? (&gt;1 GB free)</li>
+                </ul>
+
+                <h3>Degraded mode</h3>
+                <p>
+                    Si health &lt; 50, François entre en <strong>degraded mode</strong> :
+                </p>
+                <ul>
+                    <li>Désactive le GPU (fallback CPU)</li>
+                    <li>Désactive l'Autopilot</li>
+                    <li>Réduit l'usage réseau (batch requests)</li>
+                    <li>Affiche un banner "Degraded Mode" avec bouton "Attempt Recovery"</li>
+                </ul>
+
+                <h2>⏱️ Agent 5 : Timeline Observer</h2>
+
+                <h3>Responsabilités</h3>
+                <p>
+                    Enregistre <strong>tous les événements</strong> dans une timeline circulaire de 100K événements max (FIFO).
+                    Rétention : 24h, puis archivage ou suppression.
+                </p>
+
+                <h3>Types d'événements capturés</h3>
+                <ul>
+                    <li><strong>User actions</strong> : Clicks, keyboard, voice commands</li>
+                    <li><strong>System events</strong> : File changes, network requests, API calls</li>
+                    <li><strong>Performance events</strong> : Frame drops, slow operations (&gt;100ms)</li>
+                    <li><strong>Error events</strong> : Exceptions, warnings, crashes</li>
+                    <li><strong>State changes</strong> : Autopilot state transitions, mode changes</li>
+                </ul>
+
+                <h3>Format d'événement</h3>
+                <pre><code>{
+    "id": "evt_abc123",
+    "timestamp": 1704067200000,
+    "type": "user_action",
+    "action": "click_button",
+    "context": {
+        "button_id": "run-tests",
+        "screen": "editor",
+        "file": "src/App.tsx"
+    },
+    "metadata": {
+        "session_id": "sess_xyz",
+        "user_id": "anon_hash",
+        "version": "1.0.0"
+    }
+}</code></pre>
+
+                <h3>Buffer circulaire</h3>
+                <pre><code>// Implémentation Rust
+struct TimelineBuffer {
+    events: VecDeque<Event>,
+    max_size: usize,  // 100_000
+    retention: Duration,  // 24h
+}
+
+impl TimelineBuffer {
+    fn push(&mut self, event: Event) {
+        if self.events.len() >= self.max_size {
+            self.events.pop_front();  // FIFO
+        }
+        self.events.push_back(event);
+    }
+}</code></pre>
+
+                <h3>Export & Replay</h3>
+                <p>
+                    Exportez la timeline pour debugging :
+                </p>
+                <pre><code># Export JSON
+francois observer export timeline.json
+
+# Export CSV
+francois observer export timeline.csv --format=csv
+
+# Export filtré
+francois observer export errors.json --filter=error
+
+# Replay (debug mode)
+francois observer replay timeline.json</code></pre>
+
+                <h3>Filtrage avancé</h3>
+                <p>
+                    Dans l'UI, filtrez la timeline par :
+                </p>
+                <ul>
+                    <li>Type (user_action, system_event, error...)</li>
+                    <li>Niveau (critical, high, medium, low)</li>
+                    <li>Agent (performance, error, resource, health, timeline)</li>
+                    <li>Texte (full-text search dans les events)</li>
+                    <li>Période (dernière heure, aujourd'hui, custom range)</li>
+                </ul>
+
+                <h2>📡 Event Bus</h2>
+                <p>
+                    Tous les Observers communiquent via un event bus centralisé :
+                </p>
+
+                <pre><code>// Rust side (Tauri)
+pub enum ObserverEvent {
+    PerformanceMetric { fps: f32, latency_p99: f32 },
+    ErrorDetected { level: ErrorLevel, message: String },
+    ResourceUpdate { cpu: f32, ram: f32, gpu: f32 },
+    HealthScoreChanged { score: u8, previous: u8 },
+    TimelineEvent { event: Event },
+}
+
+// Publish
+observer_bus.publish(ObserverEvent::PerformanceMetric {
+    fps: 58.2,
+    latency_p99: 23.4
+});
+
+// Subscribe (TypeScript side)
+import { listen } from '@tauri-apps/api/event';
+
+listen('observer-event', (event) => {
+    // Update Zustand store
+    useObserverStore.getState().updateMetrics(event.payload);
+});</code></pre>
+
+                <h2>🎨 UI Dashboard</h2>
+                <p>
+                    Accédez au dashboard Observer via <code>Cmd+Shift+O</code> ou menu "View → Observer Dashboard".
+                </p>
+
+                <h3>Sections du dashboard</h3>
+                <ul>
+                    <li><strong>Health Score</strong> : Score 0-100 avec gauge circulaire</li>
+                    <li><strong>Performance</strong> : Graphes FPS, latence P99, throughput</li>
+                    <li><strong>Errors</strong> : Liste des erreurs récentes avec stack traces</li>
+                    <li><strong>Resources</strong> : Graphes CPU, RAM, GPU, Disk I/O</li>
+                    <li><strong>Timeline</strong> : Timeline scrollable avec filtres</li>
+                </ul>
+
+                <h2>⚙️ Configuration</h2>
+
+                <h3>Activer/Désactiver l'Observer</h3>
+                <pre><code># Activer (activé par défaut)
+francois config set OBSERVER_ENABLED=true
+
+# Désactiver (pour debugging ou low-resource systems)
+francois config set OBSERVER_ENABLED=false</code></pre>
+
+                <h3>Configurer les agents</h3>
+                <pre><code># Activer/désactiver individuellement
+francois config set OBSERVER_PERFORMANCE_ENABLED=true
+francois config set OBSERVER_ERROR_ENABLED=true
+francois config set OBSERVER_RESOURCE_ENABLED=true
+francois config set OBSERVER_HEALTH_ENABLED=true
+francois config set OBSERVER_TIMELINE_ENABLED=true</code></pre>
+
+                <h3>Configurer la timeline</h3>
+                <pre><code># Taille du buffer (nombre d'événements)
+francois config set OBSERVER_TIMELINE_SIZE=100000
+
+# Rétention (durée)
+francois config set OBSERVER_TIMELINE_RETENTION=24h
+
+# Auto-export (pour debugging)
+francois config set OBSERVER_AUTO_EXPORT=false</code></pre>
+
+                <h3>Configurer les alertes</h3>
+                <pre><code># Seuil health score (en dessous = alerte)
+francois config set OBSERVER_HEALTH_THRESHOLD=50
+
+# Notifications desktop
+francois config set OBSERVER_NOTIFICATIONS=true
+
+# Niveau minimum pour notif (critical/high/medium/low)
+francois config set OBSERVER_NOTIFICATION_LEVEL=high</code></pre>
+
+                <h2>🔬 Cas d'Usage</h2>
+
+                <h3>1. Debugging d'un crash</h3>
+                <ol>
+                    <li>François crash → Timeline exportée automatiquement</li>
+                    <li>Ouvrir le fichier exporté dans l'Observer Dashboard</li>
+                    <li>Filtrer par niveau "critical" → voir l'erreur exacte</li>
+                    <li>Remonter la timeline → voir les événements précédents</li>
+                    <li>Replay la timeline pour reproduire le bug</li>
+                </ol>
+
+                <h3>2. Optimisation de performance</h3>
+                <ol>
+                    <li>Observer Dashboard → Onglet Performance</li>
+                    <li>Identifier les operations avec latence P99 élevée</li>
+                    <li>Timeline → Filtrer par "slow_operation"</li>
+                    <li>Analyser le contexte de ces opérations</li>
+                    <li>Optimiser (activer GPU, augmenter cache, etc.)</li>
+                </ol>
+
+                <h3>3. Monitoring en production</h3>
+                <ol>
+                    <li>Export timeline périodique (cron)</li>
+                    <li>Agrégation des métriques (custom script)</li>
+                    <li>Alertes sur health score &lt; 70</li>
+                    <li>Dashboards externes (Grafana, Datadog...)</li>
+                </ol>
+
+                <div class="callout callout-success">
+                    <h5>💡 Best Practice</h5>
+                    <p>Gardez l'Observer activé en permanence. L'overhead est négligeable (&lt;1% CPU) et les bénéfices sont énormes pour le debugging.</p>
+                </div>
+
+                <h2>🚀 Roadmap</h2>
+                <ul>
+                    <li><strong>AI-powered anomaly detection</strong> : Utiliser Claude pour détecter des patterns anormaux dans la timeline</li>
+                    <li><strong>Predictive health</strong> : Prédire les problèmes avant qu'ils n'arrivent (ML sur les métriques)</li>
+                    <li><strong>Distributed tracing</strong> : Support OpenTelemetry pour intégration avec des systèmes externes</li>
+                    <li><strong>Real-time collaboration</strong> : Observer partagé pour les équipes (voir les métriques des collègues)</li>
+                </ul>
+            </div>
+
+            <div class="docs-nav-buttons">
+                <a href="gpu-acceleration.html" class="docs-nav-button">
+                    <span>← Précédent</span>
+                    <span>GPU Acceleration</span>
+                </a>
+                <a href="autopilot.html" class="docs-nav-button next">
+                    <span>Suivant →</span>
+                    <span>Autopilot System</span>
+                </a>
+            </div>
+        </main>
+
+        <!-- Table of Contents -->
+        <aside class="docs-toc">
+            <h4>Sur cette page</h4>
+            <ul>
+                <li><a href="#vue-densemble">Vue d'ensemble</a></li>
+                <li><a href="#performance-observer">Performance Observer</a></li>
+                <li><a href="#error-observer">Error Observer</a></li>
+                <li><a href="#resource-observer">Resource Observer</a></li>
+                <li><a href="#health-observer">Health Observer</a></li>
+                <li><a href="#timeline-observer">Timeline Observer</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#cas-dusage">Cas d'Usage</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>

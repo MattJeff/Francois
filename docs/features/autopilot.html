@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autopilot System - Documentation François</title>
+    <link rel="stylesheet" href="../docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="docs-layout">
+        <aside class="docs-sidebar">
+            <a href="../../index.html" class="docs-logo">
+                <span>🚀</span>
+                <span>François</span>
+            </a>
+            <nav class="docs-nav">
+                <div class="docs-nav-section">
+                    <h3>Getting Started</h3>
+                    <a href="../index.html" class="docs-nav-link">Introduction</a>
+                    <a href="../getting-started.html" class="docs-nav-link">Installation</a>
+                </div>
+                <div class="docs-nav-section">
+                    <h3>Features</h3>
+                    <a href="gpu-acceleration.html" class="docs-nav-link">GPU Acceleration</a>
+                    <a href="francois-observer.html" class="docs-nav-link">François Observer</a>
+                    <a href="autopilot.html" class="docs-nav-link active">Autopilot System</a>
+                    <a href="monaco-editor.html" class="docs-nav-link">Monaco Editor</a>
+                </div>
+                <div class="docs-nav-section">
+                    <h3>API Reference</h3>
+                    <a href="../api-reference/index.html" class="docs-nav-link">Overview</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="docs-main">
+            <div class="docs-header">
+                <div class="docs-breadcrumb">
+                    <a href="../../index.html">Home</a>
+                    <span>/</span>
+                    <a href="../index.html">Documentation</a>
+                    <span>/</span>
+                    <span>Autopilot System</span>
+                </div>
+                <h1 class="docs-title">🤖 Autopilot Multi-Agents</h1>
+                <p class="docs-description">
+                    8 agents IA spécialisés qui collaborent pour transformer vos idées en code production-ready. Décrivez, validez, déployez.
+                </p>
+            </div>
+
+            <div class="docs-content">
+                <h2>📊 Les 8 Agents</h2>
+
+                <h3>🔍 1. Analyst</h3>
+                <p><strong>Rôle:</strong> Analyse la demande utilisateur, pose des questions de clarification, estime la complexité.</p>
+                <p><strong>Tools:</strong> Read, Glob, Grep, WebSearch</p>
+                <p><strong>Output:</strong> Spécifications techniques, critères d'acceptation, score complexité (1-10)</p>
+
+                <h3>🏗️ 2. Architect</h3>
+                <p><strong>Rôle:</strong> Conçoit l'architecture optimale, choisit les patterns, crée la task list.</p>
+                <p><strong>Tools:</strong> Read, Glob, WebSearch, Write</p>
+                <p><strong>Output:</strong> Architecture, composants, data flow, liste de tâches prioritisée</p>
+
+                <h3>💻 3. Coder</h3>
+                <p><strong>Rôle:</strong> Écrit le code production-ready selon les spécifications de l'Architect.</p>
+                <p><strong>Tools:</strong> Read, Write, Edit, Bash</p>
+                <p><strong>Output:</strong> Fichiers créés/modifiés, lignes changées, commit summary</p>
+
+                <h3>🧪 4. Tester</h3>
+                <p><strong>Rôle:</strong> Écrit et exécute les tests (unit, integration, e2e), mesure la coverage.</p>
+                <p><strong>Tools:</strong> Read, Write, run_tests, coverage</p>
+                <p><strong>Output:</strong> Tests passed/failed, coverage %, bugs détectés</p>
+
+                <h3>👀 5. Reviewer</h3>
+                <p><strong>Rôle:</strong> Code review : qualité, sécurité OWASP, code smells, performance.</p>
+                <p><strong>Tools:</strong> Read, Glob, analyze_code</p>
+                <p><strong>Output:</strong> Score qualité (0-100), issues, suggestions, approved/rejected</p>
+
+                <h3>🚀 6. DevOps</h3>
+                <p><strong>Rôle:</strong> Configure CI/CD, déploie (Vercel/Netlify/Docker), health checks.</p>
+                <p><strong>Tools:</strong> Bash, Git, deploy, health_check</p>
+                <p><strong>Output:</strong> Deployment status, URL, logs, rollback si échec</p>
+
+                <h3>🧠 7. Orchestrator</h3>
+                <p><strong>Rôle:</strong> Coordonne tous les agents, gère la FSM, détecte les boucles, escalade vers humain.</p>
+                <p><strong>Tools:</strong> FSM, Loop Detection, Confidence Scoring</p>
+                <p><strong>Output:</strong> Coordination, décisions, escalations</p>
+
+                <h3>⚡ 8. Fullstack (Mode FAST)</h3>
+                <p><strong>Rôle:</strong> Agent unique qui fait tout en un shot. Pour tâches simples (&lt;500 LOC).</p>
+                <p><strong>Tools:</strong> Tous les outils</p>
+                <p><strong>Output:</strong> Projet complet, rapide, style Lovable/Bolt</p>
+
+                <h2>🔄 Machine à États (FSM)</h2>
+                <pre><code>IDLE → ANALYZING → CLARIFYING? → PLANNING →
+EXECUTING → TESTING → FIXING? → REVIEWING →
+DEPLOYING → COMPLETED</code></pre>
+
+                <h3>Transitions</h3>
+                <ul>
+                    <li><strong>ANALYZING → CLARIFYING:</strong> Si questions pour l'utilisateur</li>
+                    <li><strong>TESTING → FIXING:</strong> Si tests échouent (max 3 cycles)</li>
+                    <li><strong>REVIEWING → EXECUTING:</strong> Si review rejette (max 2 cycles)</li>
+                    <li><strong>Toute étape → IDLE:</strong> Si confidence &lt; 50% ou timeout</li>
+                </ul>
+
+                <h2>🛡️ Sécurités</h2>
+                <ul>
+                    <li><strong>Confidence &lt; 50%:</strong> Escalade vers humain (pause + question)</li>
+                    <li><strong>5 répétitions / 60s:</strong> Boucle détectée → arrêt + escalade</li>
+                    <li><strong>Timeout 30 min:</strong> Mission trop longue → arrêt + rapport</li>
+                    <li><strong>Checkpoints auto:</strong> Sauvegarde à chaque état → rollback possible</li>
+                </ul>
+
+                <h2>⚙️ Configuration</h2>
+                <pre><code># Activer Autopilot
+francois config set AUTOPILOT_ENABLED=true
+
+# Choisir les modèles par agent
+francois config set AUTOPILOT_ANALYST_MODEL=sonnet
+francois config set AUTOPILOT_ARCHITECT_MODEL=opus  # Décisions critiques
+francois config set AUTOPILOT_CODER_MODEL=sonnet
+francois config set AUTOPILOT_REVIEWER_MODEL=opus  # Quality assurance
+francois config set AUTOPILOT_TESTER_MODEL=haiku   # Tests simples
+francois config set AUTOPILOT_DEVOPS_MODEL=sonnet
+
+# Mode FAST (Fullstack en un shot)
+francois autopilot fast "Crée une landing page avec formulaire contact"</code></pre>
+
+                <h2>📖 Exemple Complet</h2>
+                <pre><code>User: "Crée une API REST authentification avec JWT"
+
+[ANALYZING] Analyst pose questions:
+  - Base de données ? (PostgreSQL/MongoDB/SQLite)
+  - Framework backend ? (Express/Fastify/Hono)
+  - Tests requis ? (Oui/Non)
+
+[PLANNING] Architect crée plan:
+  1. Setup Express + TypeScript
+  2. Modèle User (email, password hash)
+  3. Routes: POST /register, POST /login, GET /me
+  4. Middleware JWT verification
+  5. Tests avec Jest + Supertest
+
+[EXECUTING] Coder implémente (6 fichiers créés)
+
+[TESTING] Tester exécute tests (12/12 passed, 95% coverage)
+
+[REVIEWING] Reviewer approve (score 92/100)
+  - ✅ Sécurité: bcrypt pour passwords, JWT secret en env
+  - ✅ Qualité: TypeScript strict, error handling
+  - ⚠️ Suggestion: Ajouter rate limiting
+
+[DEPLOYING] DevOps déploie sur Render
+  - URL: https://auth-api-abc123.onrender.com
+  - Health check: ✅ OK
+
+[COMPLETED] Mission réussie en 4min 23s</code></pre>
+
+                <div class="callout callout-info">
+                    <h5>💡 Conseil</h5>
+                    <p>Pour les projets complexes, utilisez <strong>Opus pour Architect et Reviewer</strong> (décisions critiques), et <strong>Sonnet pour le reste</strong> (bon équilibre coût/qualité).</p>
+                </div>
+            </div>
+
+            <div class="docs-nav-buttons">
+                <a href="francois-observer.html" class="docs-nav-button">
+                    <span>← Précédent</span>
+                    <span>François Observer</span>
+                </a>
+                <a href="monaco-editor.html" class="docs-nav-button next">
+                    <span>Suivant →</span>
+                    <span>Monaco Editor</span>
+                </a>
+            </div>
+        </main>
+
+        <aside class="docs-toc">
+            <h4>Sur cette page</h4>
+            <ul>
+                <li><a href="#les-8-agents">Les 8 Agents</a></li>
+                <li><a href="#machine-a-etats">Machine à États</a></li>
+                <li><a href="#securites">Sécurités</a></li>
+                <li><a href="#configuration">Configuration</a></li>
+                <li><a href="#exemple-complet">Exemple Complet</a></li>
+            </ul>
+        </aside>
+    </div>
+</body>
+</html>
